@@ -8,7 +8,7 @@ S1 Teknik Komputer, Telkom University · November 2026
 | Hadi Nugroho | 101032330235 | [@happhify](https://github.com/happhify) |
 | Aryo Zaki Abdillah | 101032300060 | [@Ry-Gith](https://github.com/Ry-Gith) |
 
-📄 **Laporan lengkap:** [`laporan.pdf`](laporan.pdf) · 🧭 **Catatan keputusan:** [`DECISIONS.md`](DECISIONS.md) · 👥 **Pembagian kerja:** [`kontribusi.md`](kontribusi.md)
+**Laporan lengkap:** [`laporan.pdf`](laporan.pdf) · **Catatan keputusan:** [`DECISIONS.md`](DECISIONS.md) · **Pembagian kerja:** [`kontribusi.md`](kontribusi.md)
 
 ---
 
