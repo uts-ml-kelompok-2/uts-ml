@@ -1,0 +1,7 @@
+{
+  "use_noise": false,
+  "weights": "kelompok",
+  "alasan": "n01\u2013n15 independen dari perilaku & profil (lihat t3_bukti_n)",
+  "k": 8,
+  "method": "kmeans"
+}
