@@ -1,0 +1,44 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\IfFileExists{bahasai.ldf}{\usepackage[bahasai]{babel}}{\usepackage[english]{babel}}
+\usepackage{booktabs,graphicx,float,amsmath,hyperref,caption,enumitem}
+\captionsetup{font=small}
+\hypersetup{hidelinks}
+\setlist{nosep}
+\graphicspath{{figures/}}
+\setlength{\parskip}{4pt}\setlength{\parindent}{0pt}\setlength{\emergencystretch}{3em}
+\input{tables/angka.tex}
+
+\title{UTS Machine Learning\\\large Estimasi Waktu Kirim, Deteksi Fraud, dan Segmentasi Pelanggan}
+\author{Kelompok 2 \\ Hadi Nugroho (101032330235) \quad Aryo Zaki Abdillah (101032300060)}
+\date{November 2026}
+
+\begin{document}
+\maketitle
+
+\section{Pendahuluan}
+Laporan ini menjawab tiga tugas UTS: (1) regresi waktu kirim paket sebagai median (P50) dan batas atas 90\% (P90),
+(2) deteksi fraud transaksi beserta keputusan transaksi mana yang ditinjau, dan (3) segmentasi pelanggan tanpa label.
+Tiga prinsip dipegang di seluruh pekerjaan:
+\begin{enumerate}
+  \item \textbf{Hanya informasi yang tersedia saat prediksi.} Setiap fitur diaudit; fitur yang baru ada setelah kejadian dibuang dengan bukti dan dampak terukur.
+  \item \textbf{Validasi meniru pemakaian nyata.} Data uji adalah September--Oktober 2025, sehingga Tugas 1 dan 2 divalidasi dengan skema berbasis waktu (latih di masa lalu, uji 2 bulan berikutnya). Random CV hanya dipakai sebagai pembanding.
+  \item \textbf{Reproducibility.} Semua angka di laporan dibaca otomatis dari file hasil di \url{kode/outputs/results/}. Satu perintah menghasilkan ulang seluruh angka, gambar, tabel, dan file prediksi (seed 42):\\ \texttt{python kode/run\_all.py -{}-task all -{}-mode train}
+\end{enumerate}
+Semua model adalah model klasik (scikit-learn, LightGBM).
+
+\input{bab_t1.tex}
+\input{bab_t2.tex}
+\input{bab_t3a.tex}
+\input{bab_t3b.tex}
+
+\section{Kesimpulan dan Keterbatasan}
+\input{bab_penutup.tex}
+
+\appendix
+\section{Lampiran}
+\input{bab_lampiran.tex}
+
+\end{document}

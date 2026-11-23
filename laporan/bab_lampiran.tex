@@ -1,0 +1,35 @@
+\subsection*{A. Reproduksi}
+\begin{verbatim}
+pip install -r kode/requirements.txt
+python -m pytest -q kode/tests
+python kode/run_all.py --task all --mode train
+python kode/run_all.py --task t1 --mode reproduce
+\end{verbatim}
+Perintah ketiga menghasilkan semua angka, gambar, tabel, dan tiga file prediksi; perintah keempat mereproduksi
+angka kunci dari model tersimpan dalam kurang dari satu menit. Seed 42. Versi library tercatat di setiap \url{kode/outputs/results/*.json}. Seluruh angka laporan berasal dari
+\url{kode/outputs/tables/angka.tex} yang dibuat otomatis dari file hasil.
+
+\subsection*{B. Penggunaan AI}
+Kode disusun dengan bantuan Claude (Anthropic). Kelompok memverifikasi hasilnya dengan tes otomatis (metrik dan anti-kebocoran fitur),
+membandingkan skema validasi, menjalankan ulang \texttt{-{}-mode reproduce}, dan memeriksa setiap tabel serta gambar. Rincian per anggota ada di \texttt{kontribusi.md}.
+
+\subsection*{C. Tabel dan gambar tambahan}
+\begin{figure}[H]\centering
+\includegraphics[width=.85\linewidth]{t1_audit_durasi.png}
+\caption{Tugas 1: durasi ekstrem (> 500 jam) setelah dibagi 60 jatuh di distribusi normal.}\label{fig:t1durasi}
+\end{figure}
+\input{tables/t1_audit_ks.tex}
+\input{tables/t1_audit_target.tex}
+\input{tables/t1_tuning.tex}
+\input{tables/t1_breakdown_mitra_kurir.tex}
+\input{tables/t1_shap.tex}
+\input{tables/t2_validasi.tex}
+\input{tables/t2_importance.tex}
+\input{tables/t2_breakdown_kategori_merchant.tex}
+\input{tables/t3_kepentingan_kelompok.tex}
+\input{tables/t3_kriteria_k.tex}
+\input{tables/t3_jaccard.tex}
+\begin{figure}[H]\centering
+\includegraphics[width=.6\linewidth]{t3_pca.png}
+\caption{Tugas 3: segmen pada dua komponen utama.}\label{fig:t3pca}
+\end{figure}

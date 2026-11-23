@@ -1,0 +1,12 @@
+\begin{itemize}
+  \item \textbf{Tugas 1.} Audit menemukan kebocoran yang paling menentukan (\texttt{jumlah\_scan}) dan kesalahan satuan pada target. Validasi waktu lebih pesimis
+        (dan lebih jujur) daripada random CV. LightGBM quantile dengan kalibrasi CQR memberi P50 dan P90 terbaik.
+        \textit{Keterbatasan:} distribusi durasi bergeser antar bulan (musim, antrean hub), sehingga coverage P90 pada September--Oktober tetap bergantung pada
+        seberapa mirip bulan tersebut dengan jendela kalibrasi.
+  \item \textbf{Tugas 2.} Dua hal paling penting adalah menangani label yang belum matang dan membuang fitur yang baru ada setelah transaksi (\texttt{flag\_review\_manual}).
+        Keputusan berbasis biaya dengan probabilitas terkalibrasi jauh lebih murah daripada menandai semua atau tidak menandai.
+        \textit{Keterbatasan:} pola fraud dan prevalensinya bisa berubah di September--Oktober; kalibrasi perlu diperbarui secara berkala.
+  \item \textbf{Tugas 3.} Kolom anonim n01--n15 membentuk struktur kuat yang tidak berkaitan dengan perilaku, sehingga dibuang. Jumlah segmen dipilih dengan stabilitas,
+        karena silhouette dan BIC tidak informatif pada data ini. \textit{Keterbatasan:} segmen berbeda secara gradual (silhouette rendah), sehingga pelanggan di
+        perbatasan segmen dapat berpindah bila fitur atau bobot diubah.
+\end{itemize}

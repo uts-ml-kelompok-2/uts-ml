@@ -1,0 +1,31 @@
+\subsection*{(e) Stabilitas}
+Clustering akhir diulang \TtigaNRun{} kali pada subsampel 80\% yang berbeda, lalu setiap hasil di-\textit{predict} ke seluruh data.
+ARI antar run: rata-rata \TtigaStabMean{} (simpangan baku \TtigaStabStd, minimum \TtigaStabMin). Jaccard terendah per cluster \TtigaJaccardMin{}
+(Tabel~\ref{tab:t3_stabilitas}, Gambar~\ref{fig:t3stab}), sehingga semua segmen muncul konsisten.
+
+\input{tables/t3_stabilitas.tex}
+\begin{figure}[ht]\centering
+\includegraphics[width=.8\linewidth]{t3_stabilitas.png}
+\caption{Kiri: ARI antar run. Kanan: Jaccard tiap cluster terhadap pasangan terdekat di run lain.}\label{fig:t3stab}
+\end{figure}
+
+\subsection*{(f) Profil segmen dan aksi marketing}
+Terdapat \TtigaNSegmen{} segmen (di luar anomali). Profil median pada fitur asli ada di Tabel~\ref{tab:t3_profil} dan pola pembedanya di Gambar~\ref{fig:t3heat}.
+Nama dan aksi per segmen (Tabel~\ref{tab:t3_aksi}) diturunkan dari fitur yang paling membedakan segmen tersebut dari populasi.
+Nama segmen hasil otomatis kami cocokkan dengan Tabel~\ref{tab:t3_profil}; dua nama kami ubah agar sesuai profil (segmen~5 menjadi \emph{Pelanggan Loyal Bernilai Tinggi} karena frekuensi dan nilai belanjanya tertinggi, segmen~2 menjadi \emph{Mulai Pasif}). Alasan aksi per segmen: segmen~0 paling sering membeli saat flash sale (69\%), sehingga voucher dengan minimum belanja sedikit di atas keranjangnya dapat menaikkan nilai transaksi; segmen~1 dominan berbelanja pagi hari, sehingga promo dan pengingat dikirim sebelum jam kerja; segmen~2 baru terakhir belanja rata-rata 44 hari lalu, sehingga perlu win-back sebelum benar-benar berhenti; segmen~3 memakai paylater paling tinggi (62\%) di kategori fashion yang rawan retur, sehingga panduan ukuran dan ulasan dapat menekan retur; segmen~4 hampir seluruhnya pengguna iOS dengan belanja besar (Rp3{,}4 juta), cocok untuk produk premium; segmen~5 sudah loyal, sehingga fokusnya menambah nilai lewat cross-sell, bukan diskon; segmen~6 tidak bertransaksi dalam 90 hari, sehingga perlu reaktivasi dengan voucher comeback.
+\input{tables/t3_profil.tex}
+\input{tables/t3_aksi.tex}
+\begin{figure}[ht]\centering
+\includegraphics[width=.9\linewidth]{t3_profil_heatmap.png}
+\caption{Z-score rata-rata fitur pembeda per segmen.}\label{fig:t3heat}
+\end{figure}
+
+\subsection*{(g) Anomali}
+Pelanggan diberi label $-1$ bila perilakunya tidak mungkin atau tidak wajar untuk manusia --- lebih dari 100 sesi per minggu (±14 sesi per hari),
+rasio konversi > 1, atau belanja 30 hari melebihi belanja 90 hari --- atau bila termasuk cluster yang mayoritas anggotanya melanggar aturan tersebut
+(cluster berprofil bot: ratusan sesi per minggu dengan konversi hampir nol). Total \TtigaAnomaliN{} pelanggan (\TtigaAnomaliPersen\%).
+Isolation Forest, likelihood GMM, dan jarak ke centroid dibandingkan sebagai alternatif (Tabel~\ref{tab:t3_anomali}); irisannya dengan aturan domain kecil,
+artinya detektor statistik umum lebih banyak menandai pelanggan yang sekadar ekstrem namun wajar. Karena pelanggan normal yang diberi $-1$
+menurunkan ARI, kami memilih definisi yang konservatif dan dapat dijelaskan.
+
+\input{tables/t3_anomali.tex}
