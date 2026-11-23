@@ -1,0 +1,14 @@
+data/
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.remember/
+kode/outputs/cache/
+kode/outputs/logs/
+laporan/*.aux
+laporan/*.log
+laporan/*.out
+laporan/*.toc
+*.zip

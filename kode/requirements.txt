@@ -1,0 +1,12 @@
+# Versi minimum yang diuji. Versi persis yang dipakai saat run tercatat di setiap kode/outputs/results/*.json (kunci "versions").
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+scikit-learn>=1.4
+lightgbm>=4.0
+imbalanced-learn>=0.12
+shap>=0.44
+matplotlib>=3.8
+pyarrow>=14
+jinja2>=3.1
+pytest>=7
