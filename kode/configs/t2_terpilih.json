@@ -1,0 +1,7 @@
+{
+  "imbalance": "tanpa penanganan",
+  "kalibrasi": "sigmoid",
+  "adaptasi": "semua data latih",
+  "batas_label_matang": "2025-08-11",
+  "label_belum_matang": "buang"
+}

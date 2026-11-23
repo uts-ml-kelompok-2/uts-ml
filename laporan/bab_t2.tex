@@ -1,0 +1,94 @@
+\section{Tugas 2 -- Deteksi Fraud}
+Data latih berisi 403.077 transaksi Januari--Agustus 2025 dengan tingkat fraud \TduaFraudRate\%; data uji 106.674 transaksi September--Oktober.
+Skor dipakai \emph{sebelum} transaksi diproses, dan setiap transaksi yang ditandai berbiaya Rp~25.000.
+
+\subsection*{(a) Audit label dan fitur}
+\textbf{Label belum matang.} Label \texttt{is\_fraud} berarti ``terkonfirmasi fraud saat data ditarik (31 Agustus)''. Tingkat fraud mingguan stabil
+di sekitar \TduaRateDasarMingguan\% lalu turun tajam di akhir data hingga \TduaRateMingguTerakhir\% pada minggu terakhir (Gambar~\ref{fig:t2label}):
+fraud yang baru terjadi belum sempat dilaporkan sehingga masih berlabel 0. Batas label matang diestimasi otomatis sebagai minggu pertama
+yang tingkat fraudnya < 80\% median Januari--Juli: \textbf{\TduaBatasMatang}.
+
+\textbf{Fitur yang tidak tersedia saat transaksi.} \texttt{flag\_review\_manual} memiliki AUC tunggal \TduaReviewAUC: tingkat fraud
+\TduaReviewFraudJikaSatu\% pada transaksi yang pernah direview, dan \TduaReviewPorsiFraud\% seluruh fraud pernah direview.
+Review dilakukan \emph{setelah} transaksi dicurigai, dan tingkat review di data uji (\TduaReviewRateTest\%) lebih rendah daripada di data latih
+(\TduaReviewRateTrain\%) karena sebagian review belum terjadi. Memasukkan fitur ini menaikkan PR-AUC validasi dari \TduaPRAUCBersih{} menjadi
+\TduaPRAUCReview{} --- kenaikan semu yang tidak akan terulang di produksi (Tabel~\ref{tab:t2_audit_dampak}). \texttt{v15} naik lurus setiap bulan
+(penanda waktu). Keduanya dibuang. Nilai kosong \texttt{menit\_sejak\_trx\_terakhir} dan \texttt{rasio\_nominal\_rata2} (±25\%) terbukti selalu
+bersamaan dan menandai transaksi pertama pengguna, sehingga dipertahankan sebagai informasi.
+
+\begin{figure}[ht]\centering
+\includegraphics[width=.85\linewidth]{t2_audit_label.png}
+\caption{Tingkat fraud mingguan; garis merah = awal periode label belum matang.}\label{fig:t2label}
+\end{figure}
+\input{tables/t2_audit_dampak.tex}
+
+\subsection*{(b) Validasi berbasis waktu dan label yang belum lengkap}
+Setiap fold terdiri dari periode latih, satu bulan kalibrasi, dan dua bulan validasi: F1 (latih Jan--Mar, kalibrasi Apr, validasi Mei--Jun) dan
+F2 (latih Jan--Apr, kalibrasi Mei, validasi Jun--Jul). Periode validasi sengaja dipilih yang labelnya sudah matang; minggu-minggu akhir Agustus
+tidak pernah dipakai sebagai validasi karena fraud-nya belum lengkap dan akan membuat metrik bias.
+Random stratified CV memberi PR-AUC \TduaValRandomPR{} dibanding \TduaValWaktuPR{} pada skema waktu (Tabel~\ref{tab:t2_validasi}).
+
+Untuk data latih, kami mensimulasikan kondisi 31 Agustus pada fold F2: fraud di tiga minggu terakhir data latih disembunyikan dengan proporsi
+yang sama seperti yang teramati di Agustus, lalu dibandingkan (i) memakai label apa adanya dan (ii) membuang periode belum matang
+(Tabel~\ref{tab:t2_label_lag}). Keputusan untuk model final: \textbf{\TduaKonfigLabel} periode belum matang (data latih final sampai \TduaBatasLatih).
+Fitur historis berbasis label juga hanya memakai label yang berumur > 30 hari.
+
+\input{tables/t2_label_lag.tex}
+
+\subsection*{(c) Fitur perilaku tanpa informasi masa depan}
+Data latih dan uji digabung lalu diurutkan menurut waktu; setiap fitur hanya memakai transaksi \emph{sebelum} transaksi tersebut.
+Fitur pengguna: rata-rata dan z-score log-nominal terhadap riwayatnya, rasio terhadap nominal maksimum sebelumnya, merchant/kategori baru,
+jumlah transaksi 1 jam dan 24 jam (hitungan sendiri), jeda sejak transaksi sebelumnya, porsi transaksi malam. Fitur merchant: rasio nominal
+terhadap rata-rata merchant, volume 24 jam dan 7 hari, pengguna baru. Tingkat fraud historis merchant dan pengguna dihitung hanya dari label yang
+sudah matang (> 30 hari sebelumnya), dengan smoothing. Tiga tes otomatis memastikan tidak ada kebocoran: fitur masa lalu tidak berubah jika data
+atau label masa depan diubah, dan hitung ulang manual cocok. Fitur perilaku menaikkan PR-AUC rata-rata dari \TduaPRTanpaPerilaku{} menjadi
+\TduaPRPerilaku{} (Tabel~\ref{tab:t2_fitur_perilaku}).
+
+\input{tables/t2_fitur_perilaku.tex}
+
+\subsection*{(d) Ketidakseimbangan kelas}
+Dibandingkan baseline regresi logistik (PR-AUC \TduaPRLogreg) dan LightGBM dengan empat strategi: tanpa penanganan, \textit{class weight}
+(\texttt{scale\_pos\_weight} = $\sqrt{\text{neg}/\text{pos}}$), \textit{undersampling} negatif 1:20, dan SMOTE 1:10 (hanya pada data latih fold).
+Karena reweighting dan resampling menggeser probabilitas, setiap varian dikalibrasi isotonic di bulan kalibrasi sebelum aturan biaya diterapkan.
+Pendekatan keempat, \textit{threshold tuning}, dibandingkan sebagai kolom ``biaya threshold tunggal'' (Tabel~\ref{tab:t2_imbalance}).
+Terpilih: \textbf{\TduaKonfigImbalance} (biaya validasi terendah).
+
+\input{tables/t2_imbalance.tex}
+
+\subsection*{(e) Pergeseran pola}
+Tingkat fraud per kanal berubah dari bulan ke bulan (Gambar~\ref{fig:t2drift}). \textit{Adversarial validation} (Juni--Agustus vs data uji)
+menunjukkan model dapat membedakan keduanya dengan AUC \TduaAdvAUCSebelum{}; penyebab utamanya fitur kumulatif sejak Januari (jumlah transaksi,
+tingkat fraud kategori kumulatif) yang nilainya naik terus mengikuti waktu. Setelah fitur tersebut dibuang, AUC adversarial turun menjadi
+\TduaAdvAUC{} dengan PR-AUC hampir tidak berubah (Tabel~\ref{tab:t2_adversarial}). Adaptasi terhadap pergeseran dibandingkan pada fold F2:
+seluruh data, tiga bulan terakhir saja, dan bobot waktu dengan paruh 60 hari (Tabel~\ref{tab:t2_adaptasi}); terpilih \textbf{\TduaKonfigAdaptasi}.
+
+\begin{figure}[ht]\centering
+\includegraphics[width=.75\linewidth]{t2_drift_kanal.png}
+\caption{Tingkat fraud per kanal per bulan.}\label{fig:t2drift}
+\end{figure}
+\input{tables/t2_adversarial.tex}
+\input{tables/t2_adaptasi.tex}
+
+\subsection*{(f) Kalibrasi dan aturan keputusan berbasis biaya}
+Jika transaksi ditandai, biayanya Rp~25.000 (fraud tertahan tanpa kerugian); jika tidak, ekspektasi kerugiannya $p \times \text{nominal}$.
+Maka transaksi ditandai bila $p \times \text{nominal} > 25.000$. Aturan ini hanya benar bila $p$ terkalibrasi, sehingga dibandingkan tanpa kalibrasi,
+Platt (sigmoid), dan isotonic pada bulan kalibrasi (Tabel~\ref{tab:t2_kalibrasi_biaya}, Gambar~\ref{fig:t2rel}); terpilih \textbf{\TduaKonfigKalibrasi}.
+Rata-rata biaya validasi per dua bulan: aturan kami Rp~\TduaBiayaAturan{} juta (recall \TduaRecallAturan\%), threshold tunggal Rp~\TduaBiayaThr{} juta,
+menandai semua Rp~\TduaBiayaSemua{} juta, dan tidak menandai sama sekali Rp~\TduaBiayaTidak{} juta.
+
+\input{tables/t2_kalibrasi_biaya.tex}
+\begin{figure}[ht]\centering
+\includegraphics[width=.45\linewidth]{t2_reliability.png}
+\caption{Reliability diagram fold F2 (skala log).}\label{fig:t2rel}
+\end{figure}
+
+\subsection*{(g) Analisis error}
+Pada fold F2 model final mencapai PR-AUC \TduaFinalValPR{} dengan biaya Rp~\TduaFinalValBiaya{} juta, yang sebagian besar berasal dari fraud lolos
+senilai Rp~\TduaNominalFN{} juta. Kanal dengan biaya terbesar adalah \textbf{\TduaKanalBiayaTerbesar} (recall \TduaKanalRecall\%)
+(Tabel~\ref{tab:t2_breakdown_kanal}). Pola fraud yang ditemukan beserta recall model per pola ada di Tabel~\ref{tab:t2_pola_fraud};
+pola dengan porsi terbesar adalah \emph{akun baru ($<$30 hari)}, yaitu 13{,}8\% dari seluruh fraud, tetapi recall model pada pola ini hanya 0{,}48. Dugaan kami, akun baru belum punya riwayat transaksi, sehingga fitur perilaku berbasis riwayat (rata-rata dan frekuensi sebelumnya) belum informatif. Recall terendah ada pada \emph{card testing} (0{,}37): nominalnya kecil ($<$Rp50 ribu), sehingga dengan aturan biaya kerugian per transaksi yang lolos rendah dan banyak yang berada di bawah threshold. Sebaliknya, pola pengambilalihan akun dan kartu tidak hadir jarak jauh tertangkap dengan baik (recall $\geq$0{,}95) karena sinyalnya kuat dan jelas.
+\input{tables/t2_breakdown_kanal.tex}
+\input{tables/t2_pola_fraud.tex}
+
+\textbf{Prediksi uji.} Model final dilatih sampai \TduaBatasLatih; pada data uji \TduaTestDitandai{} transaksi (\TduaTestPersenDitandai\%) ditandai
+untuk direview, dengan rata-rata probabilitas \TduaTestProbRata\%.
