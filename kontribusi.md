@@ -1,15 +1,11 @@
 # Kontribusi Anggota — UTS Machine Learning
 
-> DRAF — lengkapi bagian `[...]` sebelum push. Isi file ini harus disetujui semua anggota.
-
 ## Anggota dan peran
 
 | Anggota | NIM | Akun GitHub | Peran utama | Pull request |
 |---|---|---|---|---|
 | [Hadi Nugroho] | [101032330235] | [happhify] | Tugas 1 (regresi), Tugas 3 bagian 1 (preprocessing, seleksi fitur, metode, jumlah cluster), integrasi `run_all.py` | [link PR] |
 | [Aryo Zaki Abdillah] | [1010323300060] | [Ry-Gith] | Tugas 2 (fraud), Tugas 3 bagian 2 (stabilitas, profil & aksi, anomali), laporan | [link PR] |
-
-Review silang: PR milik A direview B, PR milik B direview A.
 
 ## Penggunaan AI
 
