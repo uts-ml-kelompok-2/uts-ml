@@ -1,0 +1,15 @@
+{
+  "params": {
+    "num_leaves": 63,
+    "learning_rate": 0.03,
+    "n_estimators": 700,
+    "min_child_samples": 50,
+    "colsample_bytree": 0.6
+  },
+  "high_card": "te",
+  "kalibrasi": "CQR gabungan lintas bulan",
+  "unknown_frac": 0.0,
+  "drop_extra": [
+    "mitra_kurir"
+  ]
+}

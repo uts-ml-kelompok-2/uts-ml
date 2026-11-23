@@ -1,0 +1,101 @@
+\section{Tugas 1 -- Estimasi Waktu Kirim (Regresi P50 dan P90)}
+Data latih berisi 250.000 paket yang diambil kurir Januari--Agustus 2025; data uji 60.000 paket September--Oktober 2025.
+Target \texttt{durasi\_jam} diprediksi sebagai P50 dan P90 pada saat paket diambil kurir.
+
+\subsection*{(a) Audit data}
+\textbf{Kesalahan satuan pada target.} Sebanyak \TsatuDurasiEkstremN{} paket (\TsatuDurasiEkstremPersen\%) memiliki durasi di atas 500 jam
+(maksimum \TsatuDurasiMaks{} jam). Jika dibagi 60, median kelompok ini menjadi \TsatuMedianEkstremBagi{} jam, hampir sama dengan median
+data normal (\TsatuMedianNormal{} jam) --- bukti kuat bahwa nilai tersebut tercatat dalam menit (Gambar~\ref{fig:t1durasi}).
+Tiga perlakuan dibandingkan pada validasi waktu (Tabel~\ref{tab:t1_audit_target}); perlakuan ``dibagi 60'' dipakai.
+
+\textbf{Nilai tidak valid.} \texttt{jarak\_km} bernilai sentinel 9999 (\TsatuJarakSentinelPersen\%) dan 0 (\TsatuJarakNolPersen\%),
+juga muncul di data uji, sehingga diubah menjadi \textit{missing} dengan indikator \texttt{jarak\_tidak\_valid}.
+\texttt{berat\_kg} kosong pada \TsatuBeratNAPersen\% baris; dibiarkan \textit{missing} (ditangani LightGBM) ditambah indikator.
+
+\textbf{Fitur yang tidak tersedia saat pickup.} Setiap fitur numerik dibandingkan distribusinya antara data latih dan uji (statistik KS)
+serta korelasinya dengan target (Tabel~\ref{tab:t1_audit_ks}). \texttt{jumlah\_scan} menonjol: korelasi Spearman dengan durasi
+\TsatuScanSpearman{}, tetapi rata-ratanya \TsatuScanMeanTrain{} di data latih dan hanya \TsatuScanMeanTest{} di data uji (KS = \TsatuScanKS).
+Scan dicatat \emph{selama} perjalanan; pada saat pickup jumlahnya baru 1--2. \texttt{f30} naik lurus setiap bulan (Gambar~\ref{fig:t1bocor}),
+sehingga hanya berfungsi sebagai penanda waktu yang tidak dapat diekstrapolasi ke September--Oktober.
+
+\textbf{Dampak.} Dengan \texttt{jumlah\_scan}, pinball P50 validasi tampak membaik dari \TsatuPinbalBersih{} menjadi \TsatuPinbalScan.
+Namun ketika nilai \texttt{jumlah\_scan} diganti dengan distribusi seperti di data uji, pinball P50 memburuk menjadi \TsatuPinbalScanTest{}
+dan coverage P90 runtuh (Tabel~\ref{tab:t1_audit_dampak}). Kedua fitur dibuang.
+
+\input{tables/t1_audit_dampak.tex}
+\begin{figure}[ht]\centering
+\includegraphics[width=.9\linewidth]{t1_audit_bocor.png}
+\caption{Kiri: distribusi \texttt{jumlah\_scan} di data latih vs uji. Kanan: median \texttt{f30} per bulan (penanda waktu).}\label{fig:t1bocor}
+\end{figure}
+
+\subsection*{(b) Skema validasi}
+Skema utama meniru penggunaan nyata: model dilatih sampai bulan $M$ dan diuji pada dua bulan berikutnya ---
+F1 (latih Jan--Apr, uji Mei--Jun) dan F2 (latih Jan--Jun, uji Jul--Agu). Sebagai pembanding, model dan fitur yang sama
+dievaluasi dengan random 3-fold CV (Tabel~\ref{tab:t1_validasi}). Random CV memberi pinball P50 rata-rata \TsatuValRandomPinbal{},
+lebih optimis dibanding skema waktu (\TsatuValWaktuPinbal), karena model ikut melihat bulan yang sama dengan data uji
+(pola musiman dan tren antrean hub). Seluruh tuning dan pemilihan model hanya dilakukan dengan skema waktu.
+
+\input{tables/t1_validasi.tex}
+
+\subsection*{(c) Model}
+Tiga keluarga model dibandingkan (Tabel~\ref{tab:t1_model}): (i) baseline kuantil empiris per (layanan $\times$ pulau tujuan),
+(ii) regresi Ridge dengan target $\log(\text{durasi})$, P90 diperoleh dari kuantil-0,9 residual, dan
+(iii) LightGBM dengan \textit{quantile loss} ($\alpha=0{,}5$ dan $\alpha=0{,}9$, dua model terpisah).
+Lima konfigurasi LightGBM di-\textit{tune} pada fold waktu (skor = pinball P50 + pinball P90), konfigurasi ke-\TsatuCfgTerbaik{} terbaik.
+LightGBM tuned mencapai pinball P50 \TsatuLgbPinbal{} dibanding Ridge \TsatuLinPinbal{} dan baseline \TsatuBasePinbal.
+
+\input{tables/t1_model.tex}
+
+\subsection*{(d) Kategori kardinalitas tinggi dan kategori baru}
+\texttt{kota\_tujuan} (405 kategori) dan \texttt{kota\_asal} dibandingkan dengan tiga encoding: target encoding \textit{out-of-fold} dengan smoothing
+(dihitung hanya dari data latih fold), frequency encoding, dan kategori native LightGBM (Tabel~\ref{tab:t1_encoding}); terpilih \TsatuKonfigEncoding.
+Kategori jarang (< 30 baris) dan kategori yang tidak dikenal dipetakan ke \texttt{\_\_OTHER\_\_}.
+Mitra kurir K13 hanya muncul di data uji (±3,9\% baris). Untuk menguji penanganannya, mitra \TsatuMitraSim{} (porsi serupa) dikeluarkan
+dari data latih fold F2 lalu diperlakukan sebagai mitra baru (Tabel~\ref{tab:t1_mitra_baru}). Strategi dipilih dengan pinball yang dibobot
+porsi mitra baru di data uji; terpilih: \TsatuKonfigMitra.
+
+\input{tables/t1_encoding.tex}
+\input{tables/t1_mitra_baru.tex}
+
+\subsection*{(e) Ketidakpastian dan kalibrasi P90}
+Model quantile tidak menjamin coverage 90\% bila distribusi bergeser. Kami menerapkan \textit{Conformalized Quantile Regression} (CQR) satu sisi:
+skor $s = y - \hat{q}_{0{,}9}$ dihitung pada data \emph{out-of-time}, lalu P90 digeser dengan kuantil-$(1-\alpha)$ skor tersebut.
+Kalibrasi dari satu jendela saja ternyata tidak stabil antar fold (Tabel~\ref{tab:t1_kalibrasi}): jendela yang memuat lonjakan Maret membuat koreksi
+terlalu besar, sedangkan jendela lain terlalu kecil. Karena itu kami menggabungkan skor dari beberapa jendela bergulir
+``latih s.d. bulan $m$, prediksi dua bulan berikutnya'' (horizon yang sama dengan data uji), secara global maupun per layanan (Mondrian).
+Pada fold F1 hanya tersedia satu jendela (latih Jan--Feb, kalibrasi Mar--Apr) yang kebetulan memuat lonjakan Maret, sehingga koreksinya
+berlebihan --- contoh nyata bahaya kalibrasi dari satu periode. Coverage tanpa kalibrasi juga menurun dari fold ke fold
+(Tabel~\ref{tab:t1_kalibrasi}), sehingga risiko \emph{under-coverage} pada September--Oktober nyata.
+Aturan pemilihan: dinilai pada fold dengan $\geq 2$ jendela kalibrasi (F2); di antara varian yang pinball P90-nya tidak lebih buruk dari tanpa kalibrasi,
+dipilih coverage terdekat 0,90. Pada F2 coverage tanpa kalibrasi \TsatuCovRawFdua{} menjadi \TsatuCovPilihFdua{} dengan varian terpilih
+\textbf{\TsatuKonfigKalibrasi}. Gambar~\ref{fig:t1kal} menunjukkan coverage per layanan.
+
+\input{tables/t1_kalibrasi.tex}
+\begin{figure}[ht]\centering
+\includegraphics[width=.7\linewidth]{t1_kalibrasi_layanan.png}
+\caption{Coverage P90 per layanan untuk tiap varian kalibrasi (rata-rata F1--F2).}\label{fig:t1kal}
+\end{figure}
+
+\subsection*{(f) Analisis error dan interpretasi model}
+Model final (konfigurasi terpilih + kalibrasi) dievaluasi pada fold F2: pinball P50 \TsatuFinalValPinbal, pinball P90 \TsatuFinalValPinbalNilan,
+coverage P90 \TsatuFinalValCov. Error terbesar per layanan terdapat pada \textbf{\TsatuLayananTerburuk} (pinball P50 \TsatuLayananTerburukPinbal),
+per pulau tujuan pada \textbf{\TsatuPulauTerburuk} (\TsatuPulauTerburukPinbal), dan per mitra pada \textbf{\TsatuMitraTerburuk} (\TsatuMitraTerburukPinbal)
+(Tabel~\ref{tab:t1_breakdown_layanan}--\ref{tab:t1_breakdown_pulau_tujuan}). Error absolut lebih besar pada rute yang durasinya memang panjang;
+pola ini konsisten dengan logistik antar-pulau: pengiriman ke Papua (pinball P50 21{,}3 jam) dan Maluku (13{,}8 jam) bergantung pada jadwal kapal atau pesawat yang jarang, sehingga satu jadwal yang terlewat langsung menambah puluhan jam, sedangkan layanan hemat dan kargo lebih sering transit dan menunggu konsolidasi muatan. Mitra K07 perlu perhatian khusus karena coverage P90-nya hanya 0{,}81, jauh di bawah target 0{,}90; artinya model secara sistematis meremehkan durasi mitra ini, sehingga kalibrasi P90 per mitra layak dicoba.
+Menurut SHAP (Gambar~\ref{fig:t1shap}), tiga fitur paling berpengaruh pada P50 adalah \texttt{\TsatuShapSatu}, \texttt{\TsatuShapDua}, dan \texttt{\TsatuShapTiga}.
+\textit{Partial dependence} (Gambar~\ref{fig:t1pdp}) menunjukkan durasi naik seiring jarak dan antrean hub asal, dengan P90 naik lebih tajam
+--- antrean panjang terutama menambah ketidakpastian.
+
+\input{tables/t1_breakdown_layanan.tex}
+\input{tables/t1_breakdown_pulau_tujuan.tex}
+\begin{figure}[ht]\centering
+\includegraphics[width=.62\linewidth]{t1_shap_summary.png}
+\caption{SHAP summary model P50 (3.000 paket validasi F2).}\label{fig:t1shap}
+\end{figure}
+\begin{figure}[ht]\centering
+\includegraphics[width=.8\linewidth]{t1_partial_dependence.png}
+\caption{Partial dependence P50 dan P90 terhadap jarak dan antrean hub asal.}\label{fig:t1pdp}
+\end{figure}
+
+\textbf{Prediksi uji.} Model final dilatih ulang pada Januari--Agustus. Median P50 data uji \TsatuTestPlimaMedian{} jam dan median P90 \TsatuTestPnilanMedian{} jam;
+P90 dijamin $\geq$ P50 (koreksi monoton diperlukan pada \TsatuPersenKoreksiMonoton\% paket).
