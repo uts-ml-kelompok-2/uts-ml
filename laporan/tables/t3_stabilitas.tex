@@ -1,0 +1,16 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rlrrrr}
+\toprule
+k & metode & n\_run & ARI\_mean & ARI\_std & ARI\_min \\
+\midrule
+7 & kmeans & 6 & 0.984 & 0.004 & 0.973 \\
+8 & kmeans & 20 & 0.985 & 0.005 & 0.970 \\
+9 & kmeans & 6 & 0.888 & 0.136 & 0.690 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Stabilitas: ARI antar run subsampling 80\% (20 run untuk k=8).}
+\label{tab:t3_stabilitas}
+\end{table}

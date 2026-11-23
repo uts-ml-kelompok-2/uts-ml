@@ -1,0 +1,17 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+metode & n\_cluster & persen\_noise & silhouette & davies\_bouldin & ARI\_antar\_seed & ARI\_vs\_kmeans \\
+\midrule
+kmeans & 8 & 0.000 & 0.092 & 2.545 & 0.989 & 1.000 \\
+gmm & 8 & 0.000 & 0.073 & 3.063 & 0.534 & 0.289 \\
+agglomerative & 8 & 0.000 & 0.086 & 2.605 & 0.482 & 0.511 \\
+hdbscan & 2 & 0.783 & 0.494 & 0.775 & 0.931 & 0.045 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Perbandingan metode pada k=8 (HDBSCAN menentukan jumlah cluster sendiri).}
+\label{tab:t3_metode}
+\end{table}

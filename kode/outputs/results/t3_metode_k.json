@@ -1,0 +1,176 @@
+{
+  "name": "t3_metode_k",
+  "quick": false,
+  "seed": 42,
+  "time": "2026-11-21 22:41:25",
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "data": {
+    "kriteria": [
+      {
+        "k": 2,
+        "silhouette": 0.4942159056663513,
+        "calinski_harabasz": 3096.940856742989,
+        "davies_bouldin": 0.7754897392793358,
+        "bic_gmm": -571761.5778844989,
+        "stabilitas_ARI": 1.0,
+        "stabilitas_std": 0.0,
+        "ukuran_terkecil_%": 5.613333333333333
+      },
+      {
+        "k": 3,
+        "silhouette": 0.10736967623233795,
+        "calinski_harabasz": 2109.213790408695,
+        "davies_bouldin": 2.398505174573382,
+        "bic_gmm": -609571.1387238813,
+        "stabilitas_ARI": 0.9926681657992018,
+        "stabilitas_std": 0.0027024960881496442,
+        "ukuran_terkecil_%": 5.613333333333333
+      },
+      {
+        "k": 4,
+        "silhouette": 0.09195994585752487,
+        "calinski_harabasz": 1633.2309988970069,
+        "davies_bouldin": 2.6390562066921395,
+        "bic_gmm": -626828.8306951659,
+        "stabilitas_ARI": 0.9843842415905604,
+        "stabilitas_std": 0.005735778549511863,
+        "ukuran_terkecil_%": 5.613333333333333
+      },
+      {
+        "k": 5,
+        "silhouette": 0.08959516882896423,
+        "calinski_harabasz": 1352.41722909253,
+        "davies_bouldin": 2.692336150354125,
+        "bic_gmm": -640605.4203854315,
+        "stabilitas_ARI": 0.8432969149800156,
+        "stabilitas_std": 0.15364582644344735,
+        "ukuran_terkecil_%": 5.613333333333333
+      },
+      {
+        "k": 6,
+        "silhouette": 0.0889161080121994,
+        "calinski_harabasz": 1179.265355217619,
+        "davies_bouldin": 2.7351539851891435,
+        "bic_gmm": -648559.0248967037,
+        "stabilitas_ARI": 0.6553726126010344,
+        "stabilitas_std": 0.1780238208132434,
+        "ukuran_terkecil_%": 5.613333333333333
+      },
+      {
+        "k": 7,
+        "silhouette": 0.09327432513237,
+        "calinski_harabasz": 1079.320141598709,
+        "davies_bouldin": 2.494348723186436,
+        "bic_gmm": -697001.0602048113,
+        "stabilitas_ARI": 0.9833237426372671,
+        "stabilitas_std": 0.0039810643716639005,
+        "ukuran_terkecil_%": 1.4258333333333333
+      },
+      {
+        "k": 8,
+        "silhouette": 0.09185047447681427,
+        "calinski_harabasz": 977.4458665940796,
+        "davies_bouldin": 2.544458888820395,
+        "bic_gmm": -697171.874281036,
+        "stabilitas_ARI": 0.9816353589953272,
+        "stabilitas_std": 0.005184053488734374,
+        "ukuran_terkecil_%": 1.4258333333333333
+      },
+      {
+        "k": 9,
+        "silhouette": 0.08152665942907333,
+        "calinski_harabasz": 832.4862578391095,
+        "davies_bouldin": 3.1118934857828613,
+        "bic_gmm": -707349.6729501743,
+        "stabilitas_ARI": 0.8685955092630184,
+        "stabilitas_std": 0.14214893914057974,
+        "ukuran_terkecil_%": 5.613333333333333
+      },
+      {
+        "k": 10,
+        "silhouette": 0.08651255816221237,
+        "calinski_harabasz": 809.4074788823751,
+        "davies_bouldin": 2.817777473651407,
+        "bic_gmm": -694258.726305376,
+        "stabilitas_ARI": 0.6851927646562015,
+        "stabilitas_std": 0.06680057517454743,
+        "ukuran_terkecil_%": 1.4258333333333333
+      },
+      {
+        "k": 11,
+        "silhouette": 0.08215022087097168,
+        "calinski_harabasz": 751.21133266798,
+        "davies_bouldin": 2.8145108817246687,
+        "bic_gmm": -734124.1454989047,
+        "stabilitas_ARI": 0.6802680083952064,
+        "stabilitas_std": 0.10290791501764891,
+        "ukuran_terkecil_%": 1.4258333333333333
+      },
+      {
+        "k": 12,
+        "silhouette": 0.08258189260959625,
+        "calinski_harabasz": 697.923464236777,
+        "davies_bouldin": 2.9458554548463414,
+        "bic_gmm": -728314.3807028555,
+        "stabilitas_ARI": 0.5958334430260228,
+        "stabilitas_std": 0.11104904047721102,
+        "ukuran_terkecil_%": 1.4258333333333333
+      }
+    ],
+    "k_terpilih": 8,
+    "aturan": "k terbesar dengan stabilitas ARI ≥ 0.95 (k ≥ 3)",
+    "metode": [
+      {
+        "metode": "kmeans",
+        "n_cluster": 8,
+        "persen_noise": 0.0,
+        "silhouette": 0.09184292703866959,
+        "davies_bouldin": 2.5447440637308745,
+        "ARI_antar_seed": 0.9892212265851461,
+        "ARI_vs_kmeans": 1.0
+      },
+      {
+        "metode": "gmm",
+        "n_cluster": 8,
+        "persen_noise": 0.0,
+        "silhouette": 0.07315155863761902,
+        "davies_bouldin": 3.0626232966564397,
+        "ARI_antar_seed": 0.5344776728775853,
+        "ARI_vs_kmeans": 0.2893548245618279
+      },
+      {
+        "metode": "agglomerative",
+        "n_cluster": 8,
+        "persen_noise": 0.0,
+        "silhouette": 0.08642751723527908,
+        "davies_bouldin": 2.6053359542269847,
+        "ARI_antar_seed": 0.4817243086038919,
+        "ARI_vs_kmeans": 0.5113412155161206
+      },
+      {
+        "metode": "hdbscan",
+        "n_cluster": 2,
+        "persen_noise": 0.7825000000000001,
+        "silhouette": 0.4942159056663513,
+        "davies_bouldin": 0.7754897392793358,
+        "ARI_antar_seed": 0.9311366436909917,
+        "ARI_vs_kmeans": 0.044796540245884114
+      }
+    ],
+    "metode_terpilih": "kmeans"
+  },
+  "angka": {
+    "TtigaK": 8,
+    "TtigaStabK": 0.982,
+    "TtigaSilK": 0.092,
+    "TtigaStabKplus": 0.869,
+    "TtigaStabKmin": 0.983,
+    "TtigaMetode": "kmeans"
+  }
+}

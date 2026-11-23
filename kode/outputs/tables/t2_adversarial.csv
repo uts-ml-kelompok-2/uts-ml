@@ -1,0 +1,3 @@
+fitur,AUC adversarial (train vs test),PR-AUC F2
+dengan fitur kumulatif,0.9845027833974361,0.7844016527777957
+tanpa fitur kumulatif (dipakai),0.873470421890749,0.7814371463978302

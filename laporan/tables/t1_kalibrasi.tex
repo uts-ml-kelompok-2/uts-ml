@@ -1,0 +1,21 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llrrr}
+\toprule
+fold & varian & pinball90 & coverage90 & lebar\_median \\
+\midrule
+F1 & tanpa kalibrasi & 4.216 & 0.907 & 20.941 \\
+F1 & CQR jendela terakhir & 4.746 & 0.961 & 34.912 \\
+F1 & CQR gabungan lintas bulan & 4.746 & 0.961 & 34.912 \\
+F1 & CQR gabungan per layanan & 4.769 & 0.960 & 36.297 \\
+F2 & tanpa kalibrasi & 4.356 & 0.874 & 20.017 \\
+F2 & CQR jendela terakhir & 4.389 & 0.865 & 18.929 \\
+F2 & CQR gabungan lintas bulan & 4.350 & 0.919 & 27.064 \\
+F2 & CQR gabungan per layanan & 4.347 & 0.920 & 27.659 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Kalibrasi P90 per fold: tanpa kalibrasi, CQR jendela terakhir, CQR gabungan lintas bulan (global / per layanan).}
+\label{tab:t1_kalibrasi}
+\end{table}

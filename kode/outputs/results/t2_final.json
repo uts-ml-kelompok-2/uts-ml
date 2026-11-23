@@ -1,0 +1,35 @@
+{
+  "name": "t2_final",
+  "quick": false,
+  "seed": 42,
+  "time": "2026-11-21 22:44:00",
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "data": {
+    "n": 106674,
+    "n_ditandai": 1723,
+    "persen_ditandai": 1.6152014548999754,
+    "prob_rata2": 0.007448326042451421,
+    "batas_latih": "2025-08-11",
+    "konfigurasi": {
+      "imbalance": "tanpa penanganan",
+      "kalibrasi": "sigmoid",
+      "adaptasi": "semua data latih",
+      "batas_label_matang": "2025-08-11",
+      "label_belum_matang": "buang"
+    },
+    "expected_fraud_test": 794.5427322524629,
+    "biaya_review_test": 43075000.0
+  },
+  "angka": {
+    "TduaTestDitandai": 1723,
+    "TduaTestPersenDitandai": 1.62,
+    "TduaTestProbRata": 0.745,
+    "TduaBatasLatih": "2025-08-11"
+  }
+}

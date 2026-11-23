@@ -1,0 +1,671 @@
+{
+  "name": "t2_audit",
+  "quick": false,
+  "seed": 42,
+  "time": "2026-11-21 21:50:59",
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "data": {
+    "mingguan": [
+      {
+        "minggu": "2025-01-05 00:00:00",
+        "mean": 0.009741784037558685,
+        "size": 8520,
+        "sum": 83.0
+      },
+      {
+        "minggu": "2025-01-12 00:00:00",
+        "mean": 0.006350058134335032,
+        "size": 11181,
+        "sum": 71.0
+      },
+      {
+        "minggu": "2025-01-19 00:00:00",
+        "mean": 0.0060403894698882075,
+        "size": 11092,
+        "sum": 67.0
+      },
+      {
+        "minggu": "2025-01-26 00:00:00",
+        "mean": 0.005290072297654735,
+        "size": 11342,
+        "sum": 60.0
+      },
+      {
+        "minggu": "2025-02-02 00:00:00",
+        "mean": 0.005191489361702128,
+        "size": 11750,
+        "sum": 61.0
+      },
+      {
+        "minggu": "2025-02-09 00:00:00",
+        "mean": 0.007398485891259464,
+        "size": 11624,
+        "sum": 86.0
+      },
+      {
+        "minggu": "2025-02-16 00:00:00",
+        "mean": 0.007018479033404406,
+        "size": 11256,
+        "sum": 79.0
+      },
+      {
+        "minggu": "2025-02-23 00:00:00",
+        "mean": 0.0062390158172231985,
+        "size": 11380,
+        "sum": 71.0
+      },
+      {
+        "minggu": "2025-03-02 00:00:00",
+        "mean": 0.005542085209560097,
+        "size": 11548,
+        "sum": 64.0
+      },
+      {
+        "minggu": "2025-03-09 00:00:00",
+        "mean": 0.008345606283750613,
+        "size": 12222,
+        "sum": 102.0
+      },
+      {
+        "minggu": "2025-03-16 00:00:00",
+        "mean": 0.008589059372915276,
+        "size": 11992,
+        "sum": 103.0
+      },
+      {
+        "minggu": "2025-03-23 00:00:00",
+        "mean": 0.008302434305980978,
+        "size": 12406,
+        "sum": 103.0
+      },
+      {
+        "minggu": "2025-03-30 00:00:00",
+        "mean": 0.0060229067930489735,
+        "size": 10128,
+        "sum": 61.0
+      },
+      {
+        "minggu": "2025-04-06 00:00:00",
+        "mean": 0.004228984012377514,
+        "size": 9695,
+        "sum": 41.0
+      },
+      {
+        "minggu": "2025-04-13 00:00:00",
+        "mean": 0.010010921004732436,
+        "size": 10988,
+        "sum": 110.0
+      },
+      {
+        "minggu": "2025-04-20 00:00:00",
+        "mean": 0.005826593616836247,
+        "size": 11499,
+        "sum": 67.0
+      },
+      {
+        "minggu": "2025-04-27 00:00:00",
+        "mean": 0.008733624454148471,
+        "size": 11450,
+        "sum": 100.0
+      },
+      {
+        "minggu": "2025-05-04 00:00:00",
+        "mean": 0.006042031523642732,
+        "size": 11420,
+        "sum": 69.0
+      },
+      {
+        "minggu": "2025-05-11 00:00:00",
+        "mean": 0.007178178337852927,
+        "size": 12538,
+        "sum": 90.0
+      },
+      {
+        "minggu": "2025-05-18 00:00:00",
+        "mean": 0.00804985717995326,
+        "size": 11553,
+        "sum": 93.0
+      },
+      {
+        "minggu": "2025-05-25 00:00:00",
+        "mean": 0.006218587613936451,
+        "size": 11739,
+        "sum": 73.0
+      },
+      {
+        "minggu": "2025-06-01 00:00:00",
+        "mean": 0.007937877480586712,
+        "size": 11590,
+        "sum": 92.0
+      },
+      {
+        "minggu": "2025-06-08 00:00:00",
+        "mean": 0.00568545803971813,
+        "size": 12488,
+        "sum": 71.0
+      },
+      {
+        "minggu": "2025-06-15 00:00:00",
+        "mean": 0.0048585806003817456,
+        "size": 11526,
+        "sum": 56.0
+      },
+      {
+        "minggu": "2025-06-22 00:00:00",
+        "mean": 0.006042560644539802,
+        "size": 11419,
+        "sum": 69.0
+      },
+      {
+        "minggu": "2025-06-29 00:00:00",
+        "mean": 0.006066302118933698,
+        "size": 11704,
+        "sum": 71.0
+      },
+      {
+        "minggu": "2025-07-06 00:00:00",
+        "mean": 0.009251253674563375,
+        "size": 11566,
+        "sum": 107.0
+      },
+      {
+        "minggu": "2025-07-13 00:00:00",
+        "mean": 0.007220503054828215,
+        "size": 12603,
+        "sum": 91.0
+      },
+      {
+        "minggu": "2025-07-20 00:00:00",
+        "mean": 0.0056092509492578525,
+        "size": 11588,
+        "sum": 65.0
+      },
+      {
+        "minggu": "2025-07-27 00:00:00",
+        "mean": 0.00543572044866264,
+        "size": 11590,
+        "sum": 63.0
+      },
+      {
+        "minggu": "2025-08-03 00:00:00",
+        "mean": 0.0072507552870090634,
+        "size": 11585,
+        "sum": 84.0
+      },
+      {
+        "minggu": "2025-08-10 00:00:00",
+        "mean": 0.007206208425720621,
+        "size": 12628,
+        "sum": 91.0
+      },
+      {
+        "minggu": "2025-08-17 00:00:00",
+        "mean": 0.004661411984066446,
+        "size": 11799,
+        "sum": 55.0
+      },
+      {
+        "minggu": "2025-08-24 00:00:00",
+        "mean": 0.003581478639038117,
+        "size": 11727,
+        "sum": 42.0
+      },
+      {
+        "minggu": "2025-08-31 00:00:00",
+        "mean": 0.0009211958797420652,
+        "size": 11941,
+        "sum": 11.0
+      }
+    ],
+    "batas_label_matang": "2025-08-11",
+    "tingkat_dasar_mingguan": 0.006228801715579825,
+    "perkiraan_label_terlihat_4_minggu_terakhir": [
+      1.0,
+      0.748,
+      0.575,
+      0.148
+    ],
+    "flag_review_manual": {
+      "fraud_rate_jika_1": 0.30371122064366485,
+      "fraud_rate_jika_0": 0.0013302068004614077,
+      "porsi_fraud_yang_direview": 0.7990083905415714,
+      "rate_review_train": 0.017113355512718413,
+      "rate_review_test": 0.012299154433132722,
+      "auc_tunggal": 0.8935072667769474
+    },
+    "v15_per_bulan": {
+      "2025-01": 0.145,
+      "2025-02": 0.445,
+      "2025-03": 0.732,
+      "2025-04": 1.054,
+      "2025-05": 1.349,
+      "2025-06": 1.654,
+      "2025-07": 1.952,
+      "2025-08": 2.265,
+      "2025-09": 2.574,
+      "2025-10": 2.879
+    },
+    "ks_auc": [
+      {
+        "fitur": "nominal",
+        "KS train-test": 0.005416666666666625,
+        "AUC tunggal": 0.651218176204811
+      },
+      {
+        "fitur": "jam",
+        "KS train-test": 0.002483333333333393,
+        "AUC tunggal": 0.6165481615920472
+      },
+      {
+        "fitur": "hari_libur",
+        "KS train-test": 0.04149999999999998,
+        "AUC tunggal": 0.5019589758983252
+      },
+      {
+        "fitur": "umur_akun_hari",
+        "KS train-test": 0.060699999999999976,
+        "AUC tunggal": 0.5950667543015358
+      },
+      {
+        "fitur": "level_kyc",
+        "KS train-test": 0.0039000000000000146,
+        "AUC tunggal": 0.5456050650280043
+      },
+      {
+        "fitur": "umur_pengguna_tahun",
+        "KS train-test": 0.008966666666666678,
+        "AUC tunggal": 0.5494420329522003
+      },
+      {
+        "fitur": "umur_perangkat_hari",
+        "KS train-test": 0.04851666666666665,
+        "AUC tunggal": 0.6617004031293504
+      },
+      {
+        "fitur": "perangkat_baru",
+        "KS train-test": 0.0007333333333332526,
+        "AUC tunggal": 0.6680977533364723
+      },
+      {
+        "fitur": "jumlah_akun_per_perangkat",
+        "KS train-test": 0.0012666666666667492,
+        "AUC tunggal": 0.5158205205575608
+      },
+      {
+        "fitur": "ganti_password_7h",
+        "KS train-test": 6.666666666665932e-05,
+        "AUC tunggal": 0.576173638527365
+      },
+      {
+        "fitur": "gagal_login_24j",
+        "KS train-test": 0.0007333333333333636,
+        "AUC tunggal": 0.6100527597798009
+      },
+      {
+        "fitur": "jarak_lokasi_km",
+        "KS train-test": 0.004066666666666663,
+        "AUC tunggal": 0.6762878454781333
+      },
+      {
+        "fitur": "negara_ip_beda",
+        "KS train-test": 0.0,
+        "AUC tunggal": 0.533794444974448
+      },
+      {
+        "fitur": "kartu_tidak_hadir",
+        "KS train-test": 0.0004333333333332856,
+        "AUC tunggal": 0.6224436465534184
+      },
+      {
+        "fitur": "menit_sejak_trx_terakhir",
+        "KS train-test": 0.12373333333333336,
+        "AUC tunggal": 0.6562207461743007
+      },
+      {
+        "fitur": "trx_1j",
+        "KS train-test": 0.002650000000000041,
+        "AUC tunggal": 0.687668818385753
+      },
+      {
+        "fitur": "trx_24j",
+        "KS train-test": 0.0008500000000000174,
+        "AUC tunggal": 0.6774937801728794
+      },
+      {
+        "fitur": "trx_7h",
+        "KS train-test": 0.013766666666666705,
+        "AUC tunggal": 0.6267683148671628
+      },
+      {
+        "fitur": "nominal_24j",
+        "KS train-test": 0.0009666666666666712,
+        "AUC tunggal": 0.6762248455349241
+      },
+      {
+        "fitur": "rasio_nominal_rata2",
+        "KS train-test": 0.03173333333333339,
+        "AUC tunggal": 0.6008116973083468
+      },
+      {
+        "fitur": "saldo_sebelum",
+        "KS train-test": 0.003799999999999998,
+        "AUC tunggal": 0.5390762510885667
+      },
+      {
+        "fitur": "persen_saldo",
+        "KS train-test": 0.006033333333333335,
+        "AUC tunggal": 0.6124179221916917
+      },
+      {
+        "fitur": "umur_merchant_hari",
+        "KS train-test": 0.08109999999999995,
+        "AUC tunggal": 0.6028801577450501
+      },
+      {
+        "fitur": "refund_merchant_30h",
+        "KS train-test": 0.007716666666666705,
+        "AUC tunggal": 0.5942669423104063
+      },
+      {
+        "fitur": "volume_merchant_30h",
+        "KS train-test": 0.008300000000000002,
+        "AUC tunggal": 0.5245850898569315
+      },
+      {
+        "fitur": "flag_review_manual",
+        "KS train-test": 0.004999999999999893,
+        "AUC tunggal": 0.8935072667769474
+      },
+      {
+        "fitur": "v01",
+        "KS train-test": 0.005133333333333323,
+        "AUC tunggal": 0.5116691238735008
+      },
+      {
+        "fitur": "v02",
+        "KS train-test": 0.006799999999999973,
+        "AUC tunggal": 0.5044295766311816
+      },
+      {
+        "fitur": "v03",
+        "KS train-test": 0.006133333333333324,
+        "AUC tunggal": 0.6359324973030058
+      },
+      {
+        "fitur": "v04",
+        "KS train-test": 0.001283333333333414,
+        "AUC tunggal": 0.5090314386950062
+      },
+      {
+        "fitur": "v05",
+        "KS train-test": 0.006366666666666632,
+        "AUC tunggal": 0.5087007703032232
+      },
+      {
+        "fitur": "v06",
+        "KS train-test": 0.004666666666666708,
+        "AUC tunggal": 0.5021998722639116
+      },
+      {
+        "fitur": "v07",
+        "KS train-test": 0.004583333333333384,
+        "AUC tunggal": 0.5005636970859454
+      },
+      {
+        "fitur": "v08",
+        "KS train-test": 0.005099999999999993,
+        "AUC tunggal": 0.5038213168676238
+      },
+      {
+        "fitur": "v09",
+        "KS train-test": 0.005633333333333379,
+        "AUC tunggal": 0.5002851576126207
+      },
+      {
+        "fitur": "v10",
+        "KS train-test": 0.003449999999999953,
+        "AUC tunggal": 0.5028510027890567
+      },
+      {
+        "fitur": "v11",
+        "KS train-test": 0.0038166666666665794,
+        "AUC tunggal": 0.575478562471573
+      },
+      {
+        "fitur": "v12",
+        "KS train-test": 0.004249999999999976,
+        "AUC tunggal": 0.503560421321281
+      },
+      {
+        "fitur": "v13",
+        "KS train-test": 0.005700000000000038,
+        "AUC tunggal": 0.5019690612035599
+      },
+      {
+        "fitur": "v14",
+        "KS train-test": 0.007333333333333414,
+        "AUC tunggal": 0.5011330175426597
+      },
+      {
+        "fitur": "v15",
+        "KS train-test": 0.50355,
+        "AUC tunggal": 0.5102267380808563
+      },
+      {
+        "fitur": "v16",
+        "KS train-test": 0.0037166666666665904,
+        "AUC tunggal": 0.50356539564011
+      },
+      {
+        "fitur": "v17",
+        "KS train-test": 0.004816666666666691,
+        "AUC tunggal": 0.5018897973425557
+      },
+      {
+        "fitur": "v18",
+        "KS train-test": 0.004599999999999993,
+        "AUC tunggal": 0.5006848840831807
+      },
+      {
+        "fitur": "v19",
+        "KS train-test": 0.0034999999999999476,
+        "AUC tunggal": 0.5622196284906696
+      },
+      {
+        "fitur": "v20",
+        "KS train-test": 0.006949999999999956,
+        "AUC tunggal": 0.5022158099890589
+      },
+      {
+        "fitur": "v21",
+        "KS train-test": 0.007533333333333392,
+        "AUC tunggal": 0.5082672521791359
+      },
+      {
+        "fitur": "v22",
+        "KS train-test": 0.003916666666666679,
+        "AUC tunggal": 0.5047182552196229
+      },
+      {
+        "fitur": "v23",
+        "KS train-test": 0.003616666666666657,
+        "AUC tunggal": 0.5068611880568614
+      },
+      {
+        "fitur": "v24",
+        "KS train-test": 0.0017166666666666996,
+        "AUC tunggal": 0.504936287147283
+      },
+      {
+        "fitur": "v25",
+        "KS train-test": 0.0044500000000000095,
+        "AUC tunggal": 0.5102684902635686
+      },
+      {
+        "fitur": "v26",
+        "KS train-test": 0.022800000000000042,
+        "AUC tunggal": 0.542321975552961
+      },
+      {
+        "fitur": "v27",
+        "KS train-test": 0.008166666666666655,
+        "AUC tunggal": 0.5117787579366838
+      },
+      {
+        "fitur": "v28",
+        "KS train-test": 0.005283333333333307,
+        "AUC tunggal": 0.5061984307876488
+      },
+      {
+        "fitur": "v29",
+        "KS train-test": 0.002983333333333338,
+        "AUC tunggal": 0.5359870109992446
+      },
+      {
+        "fitur": "v30",
+        "KS train-test": 0.004866666666666575,
+        "AUC tunggal": 0.5143603722657163
+      },
+      {
+        "fitur": "v31",
+        "KS train-test": 0.004833333333333245,
+        "AUC tunggal": 0.5095514102517692
+      },
+      {
+        "fitur": "v32",
+        "KS train-test": 0.0058833333333333515,
+        "AUC tunggal": 0.5022936895551333
+      },
+      {
+        "fitur": "v33",
+        "KS train-test": 0.005033333333333334,
+        "AUC tunggal": 0.5017511588005714
+      },
+      {
+        "fitur": "v34",
+        "KS train-test": 0.002650000000000041,
+        "AUC tunggal": 0.5030500003042877
+      },
+      {
+        "fitur": "v35",
+        "KS train-test": 0.004366666666666685,
+        "AUC tunggal": 0.5146615818899595
+      },
+      {
+        "fitur": "v36",
+        "KS train-test": 0.004416666666666735,
+        "AUC tunggal": 0.5054608382583423
+      },
+      {
+        "fitur": "v37",
+        "KS train-test": 0.003750000000000031,
+        "AUC tunggal": 0.5057518059096412
+      },
+      {
+        "fitur": "v38",
+        "KS train-test": 0.013683333333333325,
+        "AUC tunggal": 0.5804881282019201
+      },
+      {
+        "fitur": "v39",
+        "KS train-test": 0.0036166666666667124,
+        "AUC tunggal": 0.5043975778467326
+      },
+      {
+        "fitur": "v40",
+        "KS train-test": 0.007716666666666705,
+        "AUC tunggal": 0.5020402983444623
+      },
+      {
+        "fitur": "v41",
+        "KS train-test": 0.005916666666666681,
+        "AUC tunggal": 0.5074606296664774
+      },
+      {
+        "fitur": "v42",
+        "KS train-test": 0.0035499999999999976,
+        "AUC tunggal": 0.5683295263079895
+      },
+      {
+        "fitur": "v43",
+        "KS train-test": 0.005266666666666642,
+        "AUC tunggal": 0.5011795735668755
+      },
+      {
+        "fitur": "v44",
+        "KS train-test": 0.0001666666666666483,
+        "AUC tunggal": 0.5044956970713548
+      },
+      {
+        "fitur": "v45",
+        "KS train-test": 0.004733333333333367,
+        "AUC tunggal": 0.5077760955761029
+      },
+      {
+        "fitur": "v46",
+        "KS train-test": 0.005750000000000033,
+        "AUC tunggal": 0.5056067035151024
+      },
+      {
+        "fitur": "v47",
+        "KS train-test": 0.0076166666666666605,
+        "AUC tunggal": 0.5157004616630734
+      },
+      {
+        "fitur": "v48",
+        "KS train-test": 0.007016666666666671,
+        "AUC tunggal": 0.5053874963415232
+      },
+      {
+        "fitur": "v49",
+        "KS train-test": 0.0017000000000000348,
+        "AUC tunggal": 0.506576762353875
+      },
+      {
+        "fitur": "v50",
+        "KS train-test": 0.0044500000000000095,
+        "AUC tunggal": 0.5005872000995512
+      }
+    ],
+    "na_transaksi_pertama": {
+      "persen_na": 25.459403538281766,
+      "na_sama_dengan_rasio_na": true
+    },
+    "dampak": [
+      {
+        "varian": "tanpa fitur bermasalah (dipakai)",
+        "pr_auc": 0.7814371463978302,
+        "roc_auc": 0.9912964054953023
+      },
+      {
+        "varian": "+ flag_review_manual",
+        "pr_auc": 0.9167513523891653,
+        "roc_auc": 0.9966857438350527
+      },
+      {
+        "varian": "+ v15",
+        "pr_auc": 0.7811744197277686,
+        "roc_auc": 0.9914124115794218
+      }
+    ]
+  },
+  "angka": {
+    "TduaFraudRate": 0.65,
+    "TduaBatasMatang": "2025-08-11",
+    "TduaRateDasarMingguan": 0.62,
+    "TduaRateMingguTerakhir": 0.09,
+    "TduaReviewFraudJikaSatu": 30.4,
+    "TduaReviewPorsiFraud": 79.9,
+    "TduaReviewAUC": 0.894,
+    "TduaReviewRateTrain": 1.71,
+    "TduaReviewRateTest": 1.23,
+    "TduaPRAUCBersih": 0.781,
+    "TduaPRAUCReview": 0.917
+  }
+}

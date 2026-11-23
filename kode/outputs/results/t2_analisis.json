@@ -1,0 +1,436 @@
+{
+  "name": "t2_analisis",
+  "quick": false,
+  "seed": 42,
+  "time": "2026-11-21 21:59:25",
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "data": {
+    "total_F2": {
+      "pr_auc": 0.774257639788736,
+      "biaya": 67013500.0,
+      "n_FN": 188,
+      "nominal_FN": 35538500.0,
+      "n_FP": 807
+    },
+    "breakdown_kanal": [
+      {
+        "kanal": "aplikasi",
+        "n": 45765,
+        "n_fraud": 148,
+        "rate_fraud_%": 0.3233912378455151,
+        "pr_auc": 0.6459423408866704,
+        "recall": 0.581081081081081,
+        "FN": 62,
+        "FP": 327,
+        "nominal_FN_juta": 10.3168,
+        "biaya_juta": 20.6418
+      },
+      {
+        "kanal": "kartu",
+        "n": 12676,
+        "n_fraud": 206,
+        "rate_fraud_%": 1.6251183338592614,
+        "pr_auc": 0.8331339572492892,
+        "recall": 0.7087378640776699,
+        "FN": 60,
+        "FP": 154,
+        "nominal_FN_juta": 9.0826,
+        "biaya_juta": 16.5826
+      },
+      {
+        "kanal": "qris",
+        "n": 22714,
+        "n_fraud": 23,
+        "rate_fraud_%": 0.10125913533503565,
+        "pr_auc": 0.07735515772598567,
+        "recall": 0.21739130434782608,
+        "FN": 18,
+        "FP": 130,
+        "nominal_FN_juta": 9.1977,
+        "biaya_juta": 12.5727
+      },
+      {
+        "kanal": "va",
+        "n": 15194,
+        "n_fraud": 145,
+        "rate_fraud_%": 0.9543240752928789,
+        "pr_auc": 0.8063902941734968,
+        "recall": 0.8758620689655172,
+        "FN": 18,
+        "FP": 136,
+        "nominal_FN_juta": 4.3098,
+        "biaya_juta": 10.8848
+      },
+      {
+        "kanal": "web",
+        "n": 6360,
+        "n_fraud": 118,
+        "rate_fraud_%": 1.8553459119496856,
+        "pr_auc": 0.9065557146796862,
+        "recall": 0.7457627118644068,
+        "FN": 30,
+        "FP": 60,
+        "nominal_FN_juta": 2.6316,
+        "biaya_juta": 6.3316
+      }
+    ],
+    "breakdown_kategori_merchant": [
+      {
+        "kategori_merchant": "elektronik",
+        "n": 11007,
+        "n_fraud": 93,
+        "rate_fraud_%": 0.8449168710820387,
+        "pr_auc": 0.7750310643752919,
+        "recall": 0.8279569892473119,
+        "FN": 16,
+        "FP": 263,
+        "nominal_FN_juta": 11.2145,
+        "biaya_juta": 19.7145
+      },
+      {
+        "kategori_merchant": "fashion",
+        "n": 6992,
+        "n_fraud": 50,
+        "rate_fraud_%": 0.7151029748283754,
+        "pr_auc": 0.2850119933473775,
+        "recall": 0.36,
+        "FN": 32,
+        "FP": 90,
+        "nominal_FN_juta": 9.211,
+        "biaya_juta": 11.911
+      },
+      {
+        "kategori_merchant": "gadget",
+        "n": 4262,
+        "n_fraud": 78,
+        "rate_fraud_%": 1.8301267010793054,
+        "pr_auc": 0.8223322855688644,
+        "recall": 0.9230769230769231,
+        "FN": 6,
+        "FP": 155,
+        "nominal_FN_juta": 3.2359,
+        "biaya_juta": 8.9109
+      },
+      {
+        "kategori_merchant": "kecantikan",
+        "n": 4439,
+        "n_fraud": 29,
+        "rate_fraud_%": 0.653300292858752,
+        "pr_auc": 0.2042458046858369,
+        "recall": 0.1724137931034483,
+        "FN": 24,
+        "FP": 56,
+        "nominal_FN_juta": 4.9617,
+        "biaya_juta": 6.4867
+      },
+      {
+        "kategori_merchant": "voucher_game",
+        "n": 4830,
+        "n_fraud": 106,
+        "rate_fraud_%": 2.1946169772256727,
+        "pr_auc": 0.9123582931783688,
+        "recall": 0.7924528301886793,
+        "FN": 22,
+        "FP": 19,
+        "nominal_FN_juta": 1.1914,
+        "biaya_juta": 3.7664
+      },
+      {
+        "kategori_merchant": "emas",
+        "n": 1611,
+        "n_fraud": 39,
+        "rate_fraud_%": 2.4208566108007448,
+        "pr_auc": 0.8495118212942706,
+        "recall": 0.9743589743589743,
+        "FN": 1,
+        "FP": 91,
+        "nominal_FN_juta": 0.1242,
+        "biaya_juta": 3.3492
+      },
+      {
+        "kategori_merchant": "toko_online",
+        "n": 8267,
+        "n_fraud": 64,
+        "rate_fraud_%": 0.7741623321640256,
+        "pr_auc": 0.8318248821649181,
+        "recall": 0.46875,
+        "FN": 34,
+        "FP": 30,
+        "nominal_FN_juta": 1.672,
+        "biaya_juta": 3.172
+      },
+      {
+        "kategori_merchant": "top_up_ewallet",
+        "n": 5325,
+        "n_fraud": 59,
+        "rate_fraud_%": 1.107981220657277,
+        "pr_auc": 0.9425919158566654,
+        "recall": 0.9152542372881356,
+        "FN": 5,
+        "FP": 30,
+        "nominal_FN_juta": 0.9576,
+        "biaya_juta": 3.0576
+      },
+      {
+        "kategori_merchant": "pulsa_data",
+        "n": 9648,
+        "n_fraud": 73,
+        "rate_fraud_%": 0.7566334991708126,
+        "pr_auc": 0.86505116993186,
+        "recall": 0.4794520547945205,
+        "FN": 38,
+        "FP": 7,
+        "nominal_FN_juta": 0.66,
+        "biaya_juta": 1.71
+      },
+      {
+        "kategori_merchant": "rumah_tangga",
+        "n": 3959,
+        "n_fraud": 5,
+        "rate_fraud_%": 0.1262945188178833,
+        "pr_auc": 0.556172891668075,
+        "recall": 0.6,
+        "FN": 2,
+        "FP": 2,
+        "nominal_FN_juta": 0.9263,
+        "biaya_juta": 1.0513
+      },
+      {
+        "kategori_merchant": "hotel",
+        "n": 3695,
+        "n_fraud": 6,
+        "rate_fraud_%": 0.16238159675236805,
+        "pr_auc": 0.8422619047619047,
+        "recall": 0.6666666666666666,
+        "FN": 2,
+        "FP": 10,
+        "nominal_FN_juta": 0.5001,
+        "biaya_juta": 0.8501
+      },
+      {
+        "kategori_merchant": "makanan_minuman",
+        "n": 15255,
+        "n_fraud": 15,
+        "rate_fraud_%": 0.09832841691248771,
+        "pr_auc": 0.7993656934082467,
+        "recall": 0.7333333333333333,
+        "FN": 4,
+        "FP": 2,
+        "nominal_FN_juta": 0.5071,
+        "biaya_juta": 0.8321
+      },
+      {
+        "kategori_merchant": "tiket_perjalanan",
+        "n": 2660,
+        "n_fraud": 5,
+        "rate_fraud_%": 0.18796992481203006,
+        "pr_auc": 0.8833333333333333,
+        "recall": 1.0,
+        "FN": 0,
+        "FP": 20,
+        "nominal_FN_juta": 0.0,
+        "biaya_juta": 0.625
+      },
+      {
+        "kategori_merchant": "otomotif",
+        "n": 2317,
+        "n_fraud": 4,
+        "rate_fraud_%": 0.17263703064307295,
+        "pr_auc": 0.8333333333333333,
+        "recall": 0.75,
+        "FN": 1,
+        "FP": 4,
+        "nominal_FN_juta": 0.2021,
+        "biaya_juta": 0.3771
+      },
+      {
+        "kategori_merchant": "pendidikan",
+        "n": 694,
+        "n_fraud": 2,
+        "rate_fraud_%": 0.2881844380403458,
+        "pr_auc": 0.5106382978723404,
+        "recall": 0.5,
+        "FN": 1,
+        "FP": 4,
+        "nominal_FN_juta": 0.1746,
+        "biaya_juta": 0.2996
+      },
+      {
+        "kategori_merchant": "olahraga",
+        "n": 1321,
+        "n_fraud": 2,
+        "rate_fraud_%": 0.1514004542013626,
+        "pr_auc": 1.0,
+        "recall": 1.0,
+        "FN": 0,
+        "FP": 6,
+        "nominal_FN_juta": 0.0,
+        "biaya_juta": 0.2
+      },
+      {
+        "kategori_merchant": "tagihan_listrik",
+        "n": 3743,
+        "n_fraud": 1,
+        "rate_fraud_%": 0.02671653753673524,
+        "pr_auc": 0.3333333333333333,
+        "recall": 1.0,
+        "FN": 0,
+        "FP": 6,
+        "nominal_FN_juta": 0.0,
+        "biaya_juta": 0.175
+      },
+      {
+        "kategori_merchant": "kesehatan",
+        "n": 3417,
+        "n_fraud": 2,
+        "rate_fraud_%": 0.058530875036581796,
+        "pr_auc": 0.625,
+        "recall": 1.0,
+        "FN": 0,
+        "FP": 4,
+        "nominal_FN_juta": 0.0,
+        "biaya_juta": 0.15
+      },
+      {
+        "kategori_merchant": "asuransi",
+        "n": 829,
+        "n_fraud": 1,
+        "rate_fraud_%": 0.12062726176115801,
+        "pr_auc": 1.0,
+        "recall": 1.0,
+        "FN": 0,
+        "FP": 5,
+        "nominal_FN_juta": 0.0,
+        "biaya_juta": 0.15
+      },
+      {
+        "kategori_merchant": "hobi",
+        "n": 1322,
+        "n_fraud": 2,
+        "rate_fraud_%": 0.15128593040847202,
+        "pr_auc": 1.0,
+        "recall": 1.0,
+        "FN": 0,
+        "FP": 1,
+        "nominal_FN_juta": 0.0,
+        "biaya_juta": 0.075
+      },
+      {
+        "kategori_merchant": "jasa_lainnya",
+        "n": 2303,
+        "n_fraud": 1,
+        "rate_fraud_%": 0.04342162396873643,
+        "pr_auc": 1.0,
+        "recall": 1.0,
+        "FN": 0,
+        "FP": 2,
+        "nominal_FN_juta": 0.0,
+        "biaya_juta": 0.075
+      },
+      {
+        "kategori_merchant": "tagihan_air",
+        "n": 1232,
+        "n_fraud": 2,
+        "rate_fraud_%": 0.16233766233766234,
+        "pr_auc": 1.0,
+        "recall": 1.0,
+        "FN": 0,
+        "FP": 0,
+        "nominal_FN_juta": 0.0,
+        "biaya_juta": 0.05
+      },
+      {
+        "kategori_merchant": "ibu_bayi",
+        "n": 2244,
+        "n_fraud": 1,
+        "rate_fraud_%": 0.044563279857397504,
+        "pr_auc": 1.0,
+        "recall": 1.0,
+        "FN": 0,
+        "FP": 0,
+        "nominal_FN_juta": 0.0,
+        "biaya_juta": 0.025
+      },
+      {
+        "kategori_merchant": "donasi",
+        "n": 1337,
+        "n_fraud": 0,
+        "rate_fraud_%": 0.0,
+        "pr_auc": null,
+        "recall": 0.0,
+        "FN": 0,
+        "FP": 0,
+        "nominal_FN_juta": 0.0,
+        "biaya_juta": 0.0
+      }
+    ],
+    "pola_fraud": [
+      {
+        "pola": "akun baru (< 30 hari)",
+        "n_trx": 3551,
+        "rate_fraud_%": 2.478175161926218,
+        "porsi_dari_semua_fraud_%": 13.750000000000002,
+        "recall_model": 0.4772727272727273
+      },
+      {
+        "pola": "akses dari IP luar negeri",
+        "n_trx": 861,
+        "rate_fraud_%": 9.059233449477352,
+        "porsi_dari_semua_fraud_%": 12.1875,
+        "recall_model": 0.6794871794871795
+      },
+      {
+        "pola": "pengambilalihan akun (ganti password 7h + perangkat baru)",
+        "n_trx": 131,
+        "rate_fraud_%": 51.14503816793893,
+        "porsi_dari_semua_fraud_%": 10.46875,
+        "recall_model": 0.9552238805970149
+      },
+      {
+        "pola": "card testing (≥3 trx/1 jam, nominal < 50rb)",
+        "n_trx": 511,
+        "rate_fraud_%": 11.154598825831702,
+        "porsi_dari_semua_fraud_%": 8.90625,
+        "recall_model": 0.3684210526315789
+      },
+      {
+        "pola": "kartu tidak hadir + jarak jauh (> 500 km)",
+        "n_trx": 296,
+        "rate_fraud_%": 7.094594594594595,
+        "porsi_dari_semua_fraud_%": 3.28125,
+        "recall_model": 0.9523809523809523
+      },
+      {
+        "pola": "merchant refund tinggi (> 10%)",
+        "n_trx": 31,
+        "rate_fraud_%": 12.903225806451612,
+        "porsi_dari_semua_fraud_%": 0.625,
+        "recall_model": 1.0
+      }
+    ],
+    "profil_FN": {
+      "nominal_median": 67350.0,
+      "p_median": 0.040084529679242004,
+      "kanal": {
+        "aplikasi": 0.33,
+        "kartu": 0.319,
+        "web": 0.16,
+        "va": 0.096,
+        "qris": 0.096
+      }
+    }
+  },
+  "angka": {
+    "TduaFinalValPR": 0.774,
+    "TduaFinalValBiaya": 67.0,
+    "TduaNominalFN": 35.5,
+    "TduaKanalBiayaTerbesar": "aplikasi",
+    "TduaKanalRecall": 58.1
+  }
+}

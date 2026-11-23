@@ -1,0 +1,17 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+model & pinball50 & pinball90 & coverage90 & mae \\
+\midrule
+LightGBM quantile (tuned, cfg 3) & 6.768 & 4.286 & 0.891 & 13.536 \\
+LightGBM quantile (default) & 6.824 & 4.282 & 0.890 & 13.648 \\
+Linear log-target (Ridge) & 7.417 & 4.571 & 0.913 & 14.834 \\
+Baseline kuantil (layanan$\times$pulau) & 10.208 & 6.266 & 0.899 & 20.417 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Perbandingan model, rata-rata 2 fold waktu (pinball lebih kecil lebih baik).}
+\label{tab:t1_model}
+\end{table}

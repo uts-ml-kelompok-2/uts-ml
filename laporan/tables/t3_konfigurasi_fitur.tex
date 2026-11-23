@@ -1,0 +1,16 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+konfigurasi & n\_fitur & silhouette & stabilitas\_ARI & ARI\_dengan\_cluster\_n \\
+\midrule
+semua kolom termasuk n01–n15 & 62 & 0.079 & 0.706 & 0.083 \\
+tanpa n, tanpa bobot & 47 & 0.085 & 0.746 & -0.000 \\
+tanpa n, bobot per kelompok (dipakai) & 47 & 0.092 & 0.984 & -0.000 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Konfigurasi fitur pada k=8: silhouette, stabilitas, dan seberapa jauh cluster ditarik oleh n01–n15.}
+\label{tab:t3_konfigurasi_fitur}
+\end{table}

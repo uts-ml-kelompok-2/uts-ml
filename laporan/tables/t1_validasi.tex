@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llrrrrr}
+\toprule
+skema & fold & pinball50 & pinball90 & coverage90 & mae & n \\
+\midrule
+waktu & F1 & 6.795 & 4.216 & 0.906 & 13.590 & 64782 \\
+waktu & F2 & 6.853 & 4.349 & 0.875 & 13.706 & 68604 \\
+random & R1 & 6.635 & 4.264 & 0.884 & 13.270 & 83334 \\
+random & R2 & 6.667 & 4.303 & 0.882 & 13.333 & 83333 \\
+random & R3 & 6.631 & 4.242 & 0.882 & 13.263 & 83333 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Validasi berbasis waktu vs random 3-fold CV (LightGBM quantile, fitur sama).}
+\label{tab:t1_validasi}
+\end{table}

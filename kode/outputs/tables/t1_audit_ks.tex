@@ -1,0 +1,21 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+fitur & KS & Spearman & mean\_train & mean\_test \\
+\midrule
+jumlah\_scan & 0.915 & 0.771 & 9.651 & 1.502 \\
+antrean\_hub\_asal & 0.263 & 0.177 & 3328.677 & 4618.876 \\
+f30 & 0.232 & -0.004 & 0.497 & 1.092 \\
+f17 & 0.108 & 0.215 & 0.264 & 0.346 \\
+f35 & 0.092 & 0.106 & 1.006 & 1.029 \\
+hujan\_tujuan\_mm & 0.036 & 0.031 & 7.998 & 7.307 \\
+hujan\_asal\_mm & 0.033 & 0.019 & 7.925 & 7.289 \\
+f24 & 0.010 & 0.001 & 0.004 & -0.008 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Fitur dengan beda distribusi train–test terbesar (KS) dan korelasi Spearman dengan durasi.}
+\label{tab:t1_audit_ks}
+\end{table}

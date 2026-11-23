@@ -1,0 +1,16 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+strategi & pr\_auc & roc\_auc & rata2\_prob\_val & fraud\_tersembunyi \\
+\midrule
+label lengkap (acuan, tidak realistis) & 0.781 & 0.991 & 0.005 & 138 \\
+label belum matang dipakai apa adanya & 0.775 & 0.991 & 0.004 & 138 \\
+buang periode belum matang (dipakai) & 0.776 & 0.991 & 0.005 & 138 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Simulasi label belum matang pada 3 minggu terakhir data latih (fold F2).}
+\label{tab:t2_label_lag}
+\end{table}

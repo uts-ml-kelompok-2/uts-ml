@@ -1,0 +1,17 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+layanan & n & median\_durasi & pinball50 & pinball90 & coverage90 & mae \\
+\midrule
+hemat & 22760 & 74.500 & 8.706 & 5.065 & 0.915 & 17.412 \\
+kargo & 6867 & 79.200 & 7.815 & 4.728 & 0.921 & 15.630 \\
+reguler & 28871 & 58.600 & 5.911 & 3.966 & 0.928 & 11.823 \\
+ekspres & 10106 & 39.700 & 4.335 & 3.357 & 0.934 & 8.670 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Error per layanan (fold F2, model final + kalibrasi).}
+\label{tab:t1_breakdown_layanan}
+\end{table}

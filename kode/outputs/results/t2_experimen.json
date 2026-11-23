@@ -1,0 +1,716 @@
+{
+  "name": "t2_experimen",
+  "quick": false,
+  "seed": 42,
+  "time": "2026-11-21 21:59:07",
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "data": {
+    "validasi": [
+      {
+        "pr_auc": 0.791604025997619,
+        "roc_auc": 0.988371942110672,
+        "n": 102706,
+        "n_fraud": 666,
+        "skema": "waktu",
+        "fold": "F1"
+      },
+      {
+        "pr_auc": 0.7814371463978302,
+        "roc_auc": 0.9912964054953023,
+        "n": 102709,
+        "n_fraud": 640,
+        "skema": "waktu",
+        "fold": "F2"
+      },
+      {
+        "pr_auc": 0.8269847044950972,
+        "roc_auc": 0.9891426112772373,
+        "n": 116725,
+        "n_fraud": 793,
+        "skema": "random",
+        "fold": "R1"
+      },
+      {
+        "pr_auc": 0.8163762091474792,
+        "roc_auc": 0.9880614119144032,
+        "n": 116724,
+        "n_fraud": 792,
+        "skema": "random",
+        "fold": "R2"
+      },
+      {
+        "pr_auc": 0.8286670942958243,
+        "roc_auc": 0.9935046497999349,
+        "n": 116724,
+        "n_fraud": 792,
+        "skema": "random",
+        "fold": "R3"
+      }
+    ],
+    "label_lag": {
+      "visibilitas_dipakai": [
+        0.748364163271896,
+        0.5749867795726943,
+        0.14789295305996317
+      ],
+      "hasil": [
+        {
+          "strategi": "label lengkap (acuan, tidak realistis)",
+          "pr_auc": 0.7814371463978302,
+          "roc_auc": 0.9912964054953023,
+          "rata2_prob_val": 0.005114325031207201,
+          "fraud_tersembunyi": 138
+        },
+        {
+          "strategi": "label belum matang dipakai apa adanya",
+          "pr_auc": 0.7753304006239683,
+          "roc_auc": 0.9906998574493725,
+          "rata2_prob_val": 0.004338477588114308,
+          "fraud_tersembunyi": 138
+        },
+        {
+          "strategi": "buang periode belum matang (dipakai)",
+          "pr_auc": 0.7763919743617378,
+          "roc_auc": 0.9905280067895247,
+          "rata2_prob_val": 0.004793580979919637,
+          "fraud_tersembunyi": 138
+        }
+      ],
+      "terpilih": "buang"
+    },
+    "fitur_perilaku": {
+      "per_fold": [
+        {
+          "pr_auc": 0.7679405835354174,
+          "roc_auc": 0.9831377584954615,
+          "n": 102706,
+          "n_fraud": 666,
+          "fitur": "tanpa fitur perilaku buatan",
+          "fold": "F1"
+        },
+        {
+          "pr_auc": 0.791604025997619,
+          "roc_auc": 0.988371942110672,
+          "n": 102706,
+          "n_fraud": 666,
+          "fitur": "+ fitur perilaku (dipakai)",
+          "fold": "F1"
+        },
+        {
+          "pr_auc": 0.7584885599411466,
+          "roc_auc": 0.9861645829047018,
+          "n": 102709,
+          "n_fraud": 640,
+          "fitur": "tanpa fitur perilaku buatan",
+          "fold": "F2"
+        },
+        {
+          "pr_auc": 0.7814371463978302,
+          "roc_auc": 0.9912964054953023,
+          "n": 102709,
+          "n_fraud": 640,
+          "fitur": "+ fitur perilaku (dipakai)",
+          "fold": "F2"
+        }
+      ],
+      "importance_gain_top": {
+        "perangkat_baru": 0.09719061627204122,
+        "menit_sejak_trx_terakhir": 0.07635239721799247,
+        "m_trx_7h": 0.07485972832565228,
+        "nominal": 0.06746071636550949,
+        "kategori_merchant": 0.057394183140384226,
+        "trx_1j": 0.057065118151168395,
+        "refund_merchant_30h": 0.050202846352929154,
+        "persen_saldo": 0.04586437848206097,
+        "umur_akun_hari": 0.03690670570339441,
+        "gagal_login_24j": 0.033537669989265995,
+        "umur_merchant_hari": 0.028760804425842442,
+        "u_trx_1j_sendiri": 0.025517243505862396,
+        "jarak_lokasi_km": 0.025394656066107035,
+        "ganti_password_7h": 0.022139138175155514,
+        "jumlah_akun_per_perangkat": 0.018079993085876742,
+        "u_jeda_menit_sendiri": 0.016114282940324003,
+        "m_nom_rasio": 0.015550657927845511,
+        "kanal": 0.013831458451683718,
+        "umur_perangkat_hari": 0.013596928321239531,
+        "v29": 0.01338192095223006
+      }
+    },
+    "imbalance": {
+      "per_fold": [
+        {
+          "pr_auc": 0.570812562628167,
+          "roc_auc": 0.9210914609238795,
+          "n": 102706,
+          "n_fraud": 666,
+          "biaya": 139936300.0,
+          "n_ditandai": 1011,
+          "recall": 0.5255255255255256,
+          "presisi": 0.34619188921859545,
+          "fold": "F1",
+          "strategi": "Logistic regression (baseline)",
+          "biaya_threshold_tunggal": 166094800.0,
+          "threshold_tunggal": 0.10869565217391304,
+          "ece_mentah": 0.001608177636741246,
+          "ece_kalibrasi": 0.001372302003328485
+        },
+        {
+          "pr_auc": 0.7759467024882849,
+          "roc_auc": 0.9860720138013357,
+          "n": 102706,
+          "n_fraud": 666,
+          "biaya": 70944800.0,
+          "n_ditandai": 1189,
+          "recall": 0.6906906906906907,
+          "presisi": 0.3868797308662742,
+          "fold": "F1",
+          "strategi": "tanpa penanganan",
+          "biaya_threshold_tunggal": 85858300.0,
+          "threshold_tunggal": 0.03,
+          "ece_mentah": 0.0021729710652757216,
+          "ece_kalibrasi": 0.0001812747448041224
+        },
+        {
+          "pr_auc": 0.7730967588690313,
+          "roc_auc": 0.9869887331471023,
+          "n": 102706,
+          "n_fraud": 666,
+          "biaya": 71072300.0,
+          "n_ditandai": 1139,
+          "recall": 0.6801801801801802,
+          "presisi": 0.3977172958735733,
+          "fold": "F1",
+          "strategi": "class weight (scale_pos_weight)",
+          "biaya_threshold_tunggal": 89453600.0,
+          "threshold_tunggal": 0.06611570247933884,
+          "ece_mentah": 0.0008073184899309576,
+          "ece_kalibrasi": 0.00026350196554850353
+        },
+        {
+          "pr_auc": 0.7593273360809389,
+          "roc_auc": 0.9852266613928709,
+          "n": 102706,
+          "n_fraud": 666,
+          "biaya": 73981700.0,
+          "n_ditandai": 1230,
+          "recall": 0.6816816816816816,
+          "presisi": 0.36910569105691055,
+          "fold": "F1",
+          "strategi": "undersampling negatif 1:20",
+          "biaya_threshold_tunggal": 87715700.0,
+          "threshold_tunggal": 0.044642857142857144,
+          "ece_mentah": 0.0018351171752565248,
+          "ece_kalibrasi": 9.105960243148677e-05
+        },
+        {
+          "pr_auc": 0.7711943789080851,
+          "roc_auc": 0.9833776691234551,
+          "n": 102706,
+          "n_fraud": 666,
+          "biaya": 76506200.0,
+          "n_ditandai": 1191,
+          "recall": 0.6786786786786787,
+          "presisi": 0.3795130142737196,
+          "fold": "F1",
+          "strategi": "SMOTE (rasio 1:10)",
+          "biaya_threshold_tunggal": 96567200.0,
+          "threshold_tunggal": 0.02891566265060241,
+          "ece_mentah": 0.0017729369974274808,
+          "ece_kalibrasi": 0.00014262564812783535
+        },
+        {
+          "pr_auc": 0.5613935505797831,
+          "roc_auc": 0.9417632924786175,
+          "n": 102709,
+          "n_fraud": 640,
+          "biaya": 116594500.0,
+          "n_ditandai": 947,
+          "recall": 0.540625,
+          "presisi": 0.36536430834213307,
+          "fold": "F2",
+          "strategi": "Logistic regression (baseline)",
+          "biaya_threshold_tunggal": 148212500.0,
+          "threshold_tunggal": 0.0625,
+          "ece_mentah": 0.0011974016962064656,
+          "ece_kalibrasi": 0.0010200299732436575
+        },
+        {
+          "pr_auc": 0.774257639788736,
+          "roc_auc": 0.9909035186981355,
+          "n": 102709,
+          "n_fraud": 640,
+          "biaya": 68024000.0,
+          "n_ditandai": 1256,
+          "recall": 0.6953125,
+          "presisi": 0.35429936305732485,
+          "fold": "F2",
+          "strategi": "tanpa penanganan",
+          "biaya_threshold_tunggal": 76723200.0,
+          "threshold_tunggal": 0.03910614525139665,
+          "ece_mentah": 0.0014872657687947314,
+          "ece_kalibrasi": 0.0003982904877346869
+        },
+        {
+          "pr_auc": 0.7647085122149867,
+          "roc_auc": 0.9913237154522921,
+          "n": 102709,
+          "n_fraud": 640,
+          "biaya": 73594000.0,
+          "n_ditandai": 1175,
+          "recall": 0.6875,
+          "presisi": 0.37446808510638296,
+          "fold": "F2",
+          "strategi": "class weight (scale_pos_weight)",
+          "biaya_threshold_tunggal": 75487200.0,
+          "threshold_tunggal": 0.06382978723404255,
+          "ece_mentah": 0.00032498737166082017,
+          "ece_kalibrasi": 0.0002546843259959829
+        },
+        {
+          "pr_auc": 0.760042663093341,
+          "roc_auc": 0.9899405824736208,
+          "n": 102709,
+          "n_fraud": 640,
+          "biaya": 69046100.0,
+          "n_ditandai": 1301,
+          "recall": 0.6890625,
+          "presisi": 0.3389700230591852,
+          "fold": "F2",
+          "strategi": "undersampling negatif 1:20",
+          "biaya_threshold_tunggal": 80229100.0,
+          "threshold_tunggal": 0.03571428571428571,
+          "ece_mentah": 0.0024340365053002223,
+          "ece_kalibrasi": 0.0002414921990405935
+        },
+        {
+          "pr_auc": 0.7661241498746018,
+          "roc_auc": 0.9893353852540928,
+          "n": 102709,
+          "n_fraud": 640,
+          "biaya": 71399000.0,
+          "n_ditandai": 1275,
+          "recall": 0.6921875,
+          "presisi": 0.3474509803921569,
+          "fold": "F2",
+          "strategi": "SMOTE (rasio 1:10)",
+          "biaya_threshold_tunggal": 77908700.0,
+          "threshold_tunggal": 0.06666666666666667,
+          "ece_mentah": 0.0010614461774080108,
+          "ece_kalibrasi": 0.0004325080946421388
+        }
+      ],
+      "rata2": [
+        {
+          "strategi": "tanpa penanganan",
+          "pr_auc": 0.7751021711385104,
+          "roc_auc": 0.9884877662497356,
+          "biaya": 69484400.0,
+          "biaya_threshold_tunggal": 81290750.0,
+          "recall": 0.6930015953453453,
+          "presisi": 0.3705895469617995,
+          "ece_mentah": 0.0018301184170352266
+        },
+        {
+          "strategi": "undersampling negatif 1:20",
+          "pr_auc": 0.75968499958714,
+          "roc_auc": 0.9875836219332459,
+          "biaya": 71513900.0,
+          "biaya_threshold_tunggal": 83972400.0,
+          "recall": 0.6853720908408408,
+          "presisi": 0.3540378570580479,
+          "ece_mentah": 0.002134576840278374
+        },
+        {
+          "strategi": "class weight (scale_pos_weight)",
+          "pr_auc": 0.768902635542009,
+          "roc_auc": 0.9891562242996972,
+          "biaya": 72333150.0,
+          "biaya_threshold_tunggal": 82470400.0,
+          "recall": 0.6838400900900901,
+          "presisi": 0.38609269048997813,
+          "ece_mentah": 0.0005661529307958888
+        },
+        {
+          "strategi": "SMOTE (rasio 1:10)",
+          "pr_auc": 0.7686592643913435,
+          "roc_auc": 0.986356527188774,
+          "biaya": 73952600.0,
+          "biaya_threshold_tunggal": 87237950.0,
+          "recall": 0.6854330893393393,
+          "presisi": 0.36348199733293823,
+          "ece_mentah": 0.001417191587417746
+        },
+        {
+          "strategi": "Logistic regression (baseline)",
+          "pr_auc": 0.5661030566039751,
+          "roc_auc": 0.9314273767012484,
+          "biaya": 128265400.0,
+          "biaya_threshold_tunggal": 157153650.0,
+          "recall": 0.5330752627627628,
+          "presisi": 0.35577809878036426,
+          "ece_mentah": 0.001402789666473856
+        }
+      ]
+    },
+    "imbalance_terpilih": "tanpa penanganan",
+    "drift_kanal_bulan": [
+      {
+        "bulan": "2025-01",
+        "aplikasi": 0.408,
+        "kartu": 1.846,
+        "qris": 0.118,
+        "va": 0.768,
+        "web": 1.604
+      },
+      {
+        "bulan": "2025-02",
+        "aplikasi": 0.339,
+        "kartu": 1.7,
+        "qris": 0.147,
+        "va": 1.001,
+        "web": 1.78
+      },
+      {
+        "bulan": "2025-03",
+        "aplikasi": 0.441,
+        "kartu": 2.037,
+        "qris": 0.141,
+        "va": 1.109,
+        "web": 1.893
+      },
+      {
+        "bulan": "2025-04",
+        "aplikasi": 0.508,
+        "kartu": 1.782,
+        "qris": 0.115,
+        "va": 1.098,
+        "web": 1.871
+      },
+      {
+        "bulan": "2025-05",
+        "aplikasi": 0.394,
+        "kartu": 2.079,
+        "qris": 0.114,
+        "va": 0.836,
+        "web": 1.888
+      },
+      {
+        "bulan": "2025-06",
+        "aplikasi": 0.307,
+        "kartu": 1.467,
+        "qris": 0.116,
+        "va": 0.962,
+        "web": 1.773
+      },
+      {
+        "bulan": "2025-07",
+        "aplikasi": 0.34,
+        "kartu": 1.773,
+        "qris": 0.087,
+        "va": 0.947,
+        "web": 1.936
+      },
+      {
+        "bulan": "2025-08",
+        "aplikasi": 0.135,
+        "kartu": 0.897,
+        "qris": 0.789,
+        "va": 0.485,
+        "web": 0.779
+      }
+    ],
+    "adversarial": {
+      "dengan fitur kumulatif": {
+        "adv_auc": 0.9845027833974361,
+        "pr_auc_F2": 0.7844016527777957,
+        "top": {
+          "k_fraud_rate_matang": 0.532,
+          "kategori_merchant": 0.196,
+          "m_n_trx_prev": 0.08,
+          "m_trx_7h": 0.06,
+          "m_fraud_rate_matang": 0.056,
+          "umur_merchant_hari": 0.03
+        }
+      },
+      "tanpa fitur kumulatif (dipakai)": {
+        "adv_auc": 0.873470421890749,
+        "pr_auc_F2": 0.7814371463978302,
+        "top": {
+          "m_fraud_rate_matang": 0.27,
+          "umur_merchant_hari": 0.249,
+          "m_trx_7h": 0.169,
+          "kategori_merchant": 0.114,
+          "umur_akun_hari": 0.042,
+          "u_jeda_menit_sendiri": 0.039
+        }
+      }
+    },
+    "adaptasi": [
+      {
+        "adaptasi": "semua data latih",
+        "pr_auc": 0.7814371463978302,
+        "roc_auc": 0.9912964054953023
+      },
+      {
+        "adaptasi": "3 bulan terakhir saja",
+        "pr_auc": 0.7694572633724029,
+        "roc_auc": 0.9899404906239896
+      },
+      {
+        "adaptasi": "bobot waktu (paruh 60 hari)",
+        "pr_auc": 0.7767864249970086,
+        "roc_auc": 0.9911310302344493
+      }
+    ],
+    "adaptasi_terpilih": "semua data latih",
+    "kalibrasi": {
+      "per_fold": [
+        {
+          "fold": "F1",
+          "kalibrasi": "none",
+          "brier": 0.002510394073765375,
+          "ece": 0.0021729710652757216,
+          "biaya_aturan_p_x_nominal": 88512300.0,
+          "biaya_threshold_tunggal": 85861100.0,
+          "biaya_tandai_semua": 2567650000.0,
+          "biaya_tidak_menandai": 887393500.0,
+          "n_ditandai_aturan": 629,
+          "recall_aturan": 0.6171171171171171
+        },
+        {
+          "fold": "F1",
+          "kalibrasi": "sigmoid",
+          "brier": 0.002256480139162359,
+          "ece": 0.00012967712816186298,
+          "biaya_aturan_p_x_nominal": 71250300.0,
+          "biaya_threshold_tunggal": 85861100.0,
+          "biaya_tandai_semua": 2567650000.0,
+          "biaya_tidak_menandai": 887393500.0,
+          "n_ditandai_aturan": 1170,
+          "recall_aturan": 0.6906906906906907
+        },
+        {
+          "fold": "F1",
+          "kalibrasi": "isotonic",
+          "brier": 0.0022629904862022086,
+          "ece": 0.0001812747448041224,
+          "biaya_aturan_p_x_nominal": 70944800.0,
+          "biaya_threshold_tunggal": 85858300.0,
+          "biaya_tandai_semua": 2567650000.0,
+          "biaya_tidak_menandai": 887393500.0,
+          "n_ditandai_aturan": 1189,
+          "recall_aturan": 0.6906906906906907
+        },
+        {
+          "fold": "F2",
+          "kalibrasi": "none",
+          "brier": 0.0023626665004163774,
+          "ece": 0.0014872657687947314,
+          "biaya_aturan_p_x_nominal": 77739100.0,
+          "biaya_threshold_tunggal": 76798200.0,
+          "biaya_tandai_semua": 2567725000.0,
+          "biaya_tidak_menandai": 777602800.0,
+          "n_ditandai_aturan": 737,
+          "recall_aturan": 0.6421875
+        },
+        {
+          "fold": "F2",
+          "kalibrasi": "sigmoid",
+          "brier": 0.002236646348686153,
+          "ece": 0.00035590424718292114,
+          "biaya_aturan_p_x_nominal": 67013500.0,
+          "biaya_threshold_tunggal": 76798200.0,
+          "biaya_tandai_semua": 2567725000.0,
+          "biaya_tidak_menandai": 777602800.0,
+          "n_ditandai_aturan": 1259,
+          "recall_aturan": 0.70625
+        },
+        {
+          "fold": "F2",
+          "kalibrasi": "isotonic",
+          "brier": 0.002262028387398778,
+          "ece": 0.0003982904877346869,
+          "biaya_aturan_p_x_nominal": 68024000.0,
+          "biaya_threshold_tunggal": 76723200.0,
+          "biaya_tandai_semua": 2567725000.0,
+          "biaya_tidak_menandai": 777602800.0,
+          "n_ditandai_aturan": 1256,
+          "recall_aturan": 0.6953125
+        }
+      ],
+      "rata2": [
+        {
+          "kalibrasi": "isotonic",
+          "brier": 0.0022625094368004936,
+          "ece": 0.00028978261626940463,
+          "biaya_aturan_p_x_nominal": 69484400.0,
+          "biaya_threshold_tunggal": 81290750.0,
+          "biaya_tandai_semua": 2567687500.0,
+          "biaya_tidak_menandai": 832498150.0,
+          "n_ditandai_aturan": 1222.5,
+          "recall_aturan": 0.6930015953453453
+        },
+        {
+          "kalibrasi": "none",
+          "brier": 0.0024365302870908764,
+          "ece": 0.0018301184170352266,
+          "biaya_aturan_p_x_nominal": 83125700.0,
+          "biaya_threshold_tunggal": 81329650.0,
+          "biaya_tandai_semua": 2567687500.0,
+          "biaya_tidak_menandai": 832498150.0,
+          "n_ditandai_aturan": 683.0,
+          "recall_aturan": 0.6296523085585586
+        },
+        {
+          "kalibrasi": "sigmoid",
+          "brier": 0.002246563243924256,
+          "ece": 0.00024279068767239206,
+          "biaya_aturan_p_x_nominal": 69131900.0,
+          "biaya_threshold_tunggal": 81329650.0,
+          "biaya_tandai_semua": 2567687500.0,
+          "biaya_tidak_menandai": 832498150.0,
+          "n_ditandai_aturan": 1214.5,
+          "recall_aturan": 0.6984703453453454
+        }
+      ],
+      "reliability_F2": {
+        "none": [
+          [
+            6.0603474224659466e-06,
+            0.0
+          ],
+          [
+            1.0963280418468575e-05,
+            0.0
+          ],
+          [
+            1.6098240357528315e-05,
+            0.0
+          ],
+          [
+            2.263901886004483e-05,
+            0.0
+          ],
+          [
+            3.1905317550872655e-05,
+            0.0
+          ],
+          [
+            4.657755944735045e-05,
+            9.736150326161036e-05
+          ],
+          [
+            7.345301575856583e-05,
+            0.0
+          ],
+          [
+            0.0001348200857916253,
+            9.736150326161036e-05
+          ],
+          [
+            0.0003347603301575595,
+            0.0012656995424009346
+          ],
+          [
+            0.04715872450559608,
+            0.060850939538506475
+          ]
+        ],
+        "sigmoid": [
+          [
+            2.1948301025300173e-05,
+            0.0
+          ],
+          [
+            3.943662945442738e-05,
+            0.0
+          ],
+          [
+            5.764165024324088e-05,
+            0.0
+          ],
+          [
+            8.072855877393998e-05,
+            0.0
+          ],
+          [
+            0.00011329904753384898,
+            0.0
+          ],
+          [
+            0.00016464022711084082,
+            9.736150326161036e-05
+          ],
+          [
+            0.0002581884467149076,
+            0.0
+          ],
+          [
+            0.00047031050136617496,
+            9.736150326161036e-05
+          ],
+          [
+            0.0011539815821827953,
+            0.0012656995424009346
+          ],
+          [
+            0.06328677007401115,
+            0.060850939538506475
+          ]
+        ],
+        "isotonic": [
+          [
+            1.923033870893205e-09,
+            0.0
+          ],
+          [
+            5.89726956419178e-05,
+            3.0021915998679037e-05
+          ],
+          [
+            0.00024851765876527927,
+            6.334325711028061e-05
+          ],
+          [
+            0.0007234517752423348,
+            0.0010039244318700374
+          ],
+          [
+            0.050243037041169586,
+            0.04766248574686431
+          ]
+        ]
+      }
+    },
+    "kalibrasi_terpilih": "sigmoid",
+    "konfigurasi_final": {
+      "imbalance": "tanpa penanganan",
+      "kalibrasi": "sigmoid",
+      "adaptasi": "semua data latih",
+      "batas_label_matang": "2025-08-11",
+      "label_belum_matang": "buang"
+    }
+  },
+  "angka": {
+    "TduaValWaktuPR": 0.787,
+    "TduaValRandomPR": 0.824,
+    "TduaPRTanpaPerilaku": 0.763,
+    "TduaPRPerilaku": 0.787,
+    "TduaImbTerpilih": "tanpa penanganan",
+    "TduaPRLogreg": 0.566,
+    "TduaAdvAUCSebelum": 0.985,
+    "TduaAdvAUC": 0.873,
+    "TduaKalTerpilih": "sigmoid",
+    "TduaBiayaAturan": 69.1,
+    "TduaBiayaThr": 81.3,
+    "TduaBiayaSemua": 2567.7,
+    "TduaBiayaTidak": 832.5,
+    "TduaRecallAturan": 69.8
+  }
+}

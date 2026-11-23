@@ -1,0 +1,17 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+varian & pinball50 & pinball90 & coverage90 & mae \\
+\midrule
+tanpa fitur bermasalah (dipakai) & 6.853 & 4.349 & 0.875 & 13.706 \\
++ jumlah\_scan (bocor) & 5.399 & 2.917 & 0.874 & 10.798 \\
++ jumlah\_scan (bocor), nilai seperti di test & 10.545 & 12.338 & 0.441 & 21.090 \\
++ f30 (penanda waktu) & 6.852 & 4.357 & 0.873 & 13.704 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Dampak fitur bermasalah pada validasi waktu F2 (latih Jan–Jun, val Jul–Agu).}
+\label{tab:t1_audit_dampak}
+\end{table}

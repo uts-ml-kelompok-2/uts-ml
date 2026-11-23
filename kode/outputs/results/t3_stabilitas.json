@@ -1,0 +1,90 @@
+{
+  "name": "t3_stabilitas",
+  "quick": false,
+  "seed": 42,
+  "time": "2026-11-21 22:42:01",
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "data": {
+    "stabilitas": [
+      {
+        "k": 7,
+        "metode": "kmeans",
+        "n_run": 6,
+        "ARI_mean": 0.9844521271749328,
+        "ARI_std": 0.004003107999164236,
+        "ARI_min": 0.9734034711967512
+      },
+      {
+        "k": 8,
+        "metode": "kmeans",
+        "n_run": 20,
+        "ARI_mean": 0.9853626642475068,
+        "ARI_std": 0.0046531066219325,
+        "ARI_min": 0.969813977761175
+      },
+      {
+        "k": 9,
+        "metode": "kmeans",
+        "n_run": 6,
+        "ARI_mean": 0.8880954336247913,
+        "ARI_std": 0.1359451912094901,
+        "ARI_min": 0.6898583082485448
+      }
+    ],
+    "jaccard_per_cluster": [
+      {
+        "cluster_run_acuan": 0,
+        "ukuran": 9767,
+        "jaccard_rata2": 0.972352989667937
+      },
+      {
+        "cluster_run_acuan": 1,
+        "ukuran": 18337,
+        "jaccard_rata2": 0.9893509720387316
+      },
+      {
+        "cluster_run_acuan": 2,
+        "ukuran": 26618,
+        "jaccard_rata2": 0.9895960066262779
+      },
+      {
+        "cluster_run_acuan": 3,
+        "ukuran": 6736,
+        "jaccard_rata2": 1.0
+      },
+      {
+        "cluster_run_acuan": 4,
+        "ukuran": 20200,
+        "jaccard_rata2": 0.9792878683162047
+      },
+      {
+        "cluster_run_acuan": 5,
+        "ukuran": 1711,
+        "jaccard_rata2": 1.0
+      },
+      {
+        "cluster_run_acuan": 6,
+        "ukuran": 17049,
+        "jaccard_rata2": 0.9915383536357032
+      },
+      {
+        "cluster_run_acuan": 7,
+        "ukuran": 19582,
+        "jaccard_rata2": 0.9895906744851711
+      }
+    ]
+  },
+  "angka": {
+    "TtigaStabMean": 0.985,
+    "TtigaStabStd": 0.005,
+    "TtigaStabMin": 0.97,
+    "TtigaJaccardMin": 0.972,
+    "TtigaNRun": 20
+  }
+}

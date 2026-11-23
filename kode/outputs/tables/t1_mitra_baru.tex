@@ -1,0 +1,16 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+strategi & pinball50\_mitra\_baru & coverage90\_mitra\_baru & pinball50\_mitra\_lama & pinball50\_terbobot \\
+\midrule
+\_\_OTHER\_\_ tanpa dropout & 6.757 & 0.853 & 6.861 & 6.857 \\
+\_\_OTHER\_\_ + kategori dropout 5\% & 6.674 & 0.874 & 6.851 & 6.844 \\
+tanpa fitur mitra\_kurir & 6.684 & 0.880 & 6.804 & 6.799 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Simulasi kategori baru: mitra K12 dikeluarkan dari data latih (fold F2).}
+\label{tab:t1_mitra_baru}
+\end{table}

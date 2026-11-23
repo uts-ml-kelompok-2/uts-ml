@@ -1,0 +1,7 @@
+pola,n_trx,rate_fraud_%,porsi_dari_semua_fraud_%,recall_model
+akun baru (< 30 hari),3551,2.478175161926218,13.750000000000002,0.4772727272727273
+akses dari IP luar negeri,861,9.059233449477352,12.1875,0.6794871794871795
+pengambilalihan akun (ganti password 7h + perangkat baru),131,51.14503816793893,10.46875,0.9552238805970149
+"card testing (≥3 trx/1 jam, nominal < 50rb)",511,11.154598825831702,8.90625,0.3684210526315789
+kartu tidak hadir + jarak jauh (> 500 km),296,7.094594594594595,3.28125,0.9523809523809523
+merchant refund tinggi (> 10%),31,12.903225806451612,0.625,1.0

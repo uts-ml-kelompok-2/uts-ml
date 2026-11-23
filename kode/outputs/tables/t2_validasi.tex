@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llrrr}
+\toprule
+skema & fold & pr\_auc & roc\_auc & n\_fraud \\
+\midrule
+waktu & F1 & 0.792 & 0.988 & 666 \\
+waktu & F2 & 0.781 & 0.991 & 640 \\
+random & R1 & 0.827 & 0.989 & 793 \\
+random & R2 & 0.816 & 0.988 & 792 \\
+random & R3 & 0.829 & 0.994 & 792 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Validasi berbasis waktu (label matang) vs random stratified 3-fold.}
+\label{tab:t2_validasi}
+\end{table}

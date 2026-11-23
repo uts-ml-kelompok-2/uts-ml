@@ -1,0 +1,105 @@
+{
+  "name": "t3_seleksi_fitur",
+  "quick": false,
+  "seed": 42,
+  "time": "2026-11-21 22:38:32",
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "data": {
+    "bukti_n": {
+      "max_abs_spearman_n_vs_perilaku": 0.010157498281177391,
+      "max_MI_berlebih_vs_acuan_acak": 0.024730495170921074,
+      "silhouette_cluster_n_saja": 0.6704482436180115,
+      "ARI(cluster_n, cluster_perilaku)": -7.222680222840352e-05,
+      "ARI(cluster_semua_kolom, cluster_n)": 0.08301047614087505,
+      "ARI(cluster_semua_kolom, cluster_perilaku)": 0.39843915461648,
+      "jumlah_kolom_n": 15,
+      "kamus_hanya_menyebut": "n01–n10",
+      "ARI(cluster_n, kota_tier)": -0.0001155568016816729,
+      "ARI(cluster_n, perangkat)": -0.0001582173982933075
+    },
+    "redundansi": {
+      "belanja_30h~belanja_90h": 0.9715623992643867,
+      "frekuensi_30h~frekuensi_90h": 0.8681180258371981
+    },
+    "konfigurasi": [
+      {
+        "konfigurasi": "semua kolom termasuk n01–n15",
+        "n_fitur": 62,
+        "silhouette": 0.07908721268177032,
+        "stabilitas_ARI": 0.7055553033233517,
+        "ARI_dengan_cluster_n": 0.08301047614087505
+      },
+      {
+        "konfigurasi": "tanpa n, tanpa bobot",
+        "n_fitur": 47,
+        "silhouette": 0.08463211357593536,
+        "stabilitas_ARI": 0.7456656823781972,
+        "ARI_dengan_cluster_n": -7.222680222840352e-05
+      },
+      {
+        "konfigurasi": "tanpa n, bobot per kelompok (dipakai)",
+        "n_fitur": 47,
+        "silhouette": 0.09185047447681427,
+        "stabilitas_ARI": 0.984359036987668,
+        "ARI_dengan_cluster_n": -4.9066923975398174e-05
+      }
+    ],
+    "kepentingan_kelompok": [
+      {
+        "kelompok": "promo & pembayaran",
+        "n_kolom": 4,
+        "perubahan_label_%": 22.120833333333334,
+        "1-ARI": 0.4822052232434614
+      },
+      {
+        "kelompok": "RFM & nilai",
+        "n_kolom": 8,
+        "perubahan_label_%": 26.88583333333333,
+        "1-ARI": 0.4499807419605305
+      },
+      {
+        "kelompok": "perilaku pasca-beli",
+        "n_kolom": 3,
+        "perubahan_label_%": 24.886666666666667,
+        "1-ARI": 0.44804608268644686
+      },
+      {
+        "kelompok": "profil",
+        "n_kolom": 7,
+        "perubahan_label_%": 19.965833333333332,
+        "1-ARI": 0.32616261638867927
+      },
+      {
+        "kelompok": "aktivitas aplikasi",
+        "n_kolom": 5,
+        "perubahan_label_%": 17.0175,
+        "1-ARI": 0.27900435770546317
+      },
+      {
+        "kelompok": "waktu belanja (CLR)",
+        "n_kolom": 4,
+        "perubahan_label_%": 10.419166666666667,
+        "1-ARI": 0.24887041256121856
+      },
+      {
+        "kelompok": "kategori (CLR)",
+        "n_kolom": 16,
+        "perubahan_label_%": 2.2083333333333335,
+        "1-ARI": 0.05595500323619884
+      }
+    ]
+  },
+  "angka": {
+    "TtigaNSil": 0.67,
+    "TtigaNARIPerilaku": -0.0,
+    "TtigaNMaxKorelasi": 0.01,
+    "TtigaSemuaVsN": 0.08,
+    "TtigaKelompokTerpenting": "promo & pembayaran"
+  }
+}

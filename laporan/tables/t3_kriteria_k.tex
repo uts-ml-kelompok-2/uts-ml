@@ -1,0 +1,24 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+k & silhouette & calinski\_harabasz & davies\_bouldin & bic\_gmm & stabilitas\_ARI & stabilitas\_std & ukuran\_terkecil\_\% \\
+\midrule
+2 & 0.494 & 3096.941 & 0.775 & -571761.578 & 1.000 & 0.000 & 5.613 \\
+3 & 0.107 & 2109.214 & 2.399 & -609571.139 & 0.993 & 0.003 & 5.613 \\
+4 & 0.092 & 1633.231 & 2.639 & -626828.831 & 0.984 & 0.006 & 5.613 \\
+5 & 0.090 & 1352.417 & 2.692 & -640605.420 & 0.843 & 0.154 & 5.613 \\
+6 & 0.089 & 1179.265 & 2.735 & -648559.025 & 0.655 & 0.178 & 5.613 \\
+7 & 0.093 & 1079.320 & 2.494 & -697001.060 & 0.983 & 0.004 & 1.426 \\
+8 & 0.092 & 977.446 & 2.544 & -697171.874 & 0.982 & 0.005 & 1.426 \\
+9 & 0.082 & 832.486 & 3.112 & -707349.673 & 0.869 & 0.142 & 5.613 \\
+10 & 0.087 & 809.407 & 2.818 & -694258.726 & 0.685 & 0.067 & 1.426 \\
+11 & 0.082 & 751.211 & 2.815 & -734124.145 & 0.680 & 0.103 & 1.426 \\
+12 & 0.083 & 697.923 & 2.946 & -728314.381 & 0.596 & 0.111 & 1.426 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Kriteria jumlah cluster (K-Means). Stabilitas = rata-rata ARI antar 5 run subsampling 80\%.}
+\label{tab:t3_kriteria_k}
+\end{table}

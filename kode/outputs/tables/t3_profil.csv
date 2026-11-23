@@ -1,0 +1,8 @@
+segmen,ukuran_%,frekuensi_90h,belanja_90h (ribu Rp),recency_hari,persen_paylater,persen_flash_sale,kategori_dominan,jam_dominan,perangkat_dominan
+0,22.69569363325217,7.0,706.6,9.2,0.172,0.686,fashion,malam,android (74%)
+1,17.159058014201303,11.0,2690.9,6.5,0.113,0.213,makanan_minuman,pagi,android (91%)
+2,16.63289458000579,2.0,350.55,44.2,0.166,0.301,makanan_minuman,sore,android (70%)
+3,15.524375500195822,7.0,1005.7,9.3,0.622,0.578,fashion,malam,android (74%)
+4,14.482265397517327,8.0,3421.8,7.5,0.099,0.17,makanan_minuman,siang,ios (96%)
+5,7.839664890084628,27.0,6741.35,6.6,0.12,0.248,makanan_minuman,pagi,android (66%)
+6,5.6660479847429635,0.0,0.0,38.5,0.169,0.329,makanan_minuman,malam,android (68%)

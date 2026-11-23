@@ -1,0 +1,6 @@
+metode,jumlah,persen,irisan_dgn_aturan_domain_%
+aturan domain,2426,2.021666666666667,100.0
+cluster berprofil bot,1711,1.4258333333333333,92.98655756867329
+Isolation Forest (top 2%),2400,2.0,7.75
+log-likelihood GMM terendah 2%,2400,2.0,13.875000000000002
+jarak ke centroid tertinggi 2%,2400,2.0,13.666666666666666

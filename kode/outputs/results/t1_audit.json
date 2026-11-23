@@ -1,0 +1,602 @@
+{
+  "name": "t1_audit",
+  "quick": false,
+  "seed": 42,
+  "time": "2026-11-21 22:08:27",
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "data": {
+    "durasi_ekstrem": {
+      "n": 397,
+      "persen": 0.1588,
+      "maks": 25452.0,
+      "median_normal": 61.6,
+      "median_ekstrem_dibagi60": 61.4,
+      "q99_normal": 215.5
+    },
+    "kualitas": {
+      "jarak_9999": 0.1824,
+      "jarak_0": 0.2812,
+      "jarak_9999_test": 0.21666666666666665,
+      "berat_na": 5.5588,
+      "berat_na_test": 5.441666666666666,
+      "duplikat_id": 0,
+      "volume_maks": 4596.8,
+      "berat_maks": 683.34
+    },
+    "ks_tabel": [
+      {
+        "fitur": "jumlah_scan",
+        "ks_train_test": 0.9151400000000001,
+        "spearman_target": 0.7705049175635249,
+        "mean_train": 9.651072,
+        "mean_test": 1.502
+      },
+      {
+        "fitur": "antrean_hub_asal",
+        "ks_train_test": 0.26270000000000004,
+        "spearman_target": 0.1772742823677138,
+        "mean_train": 3328.676856,
+        "mean_test": 4618.8759
+      },
+      {
+        "fitur": "f30",
+        "ks_train_test": 0.23152000000000006,
+        "spearman_target": -0.0038126940496591467,
+        "mean_train": 0.496592288,
+        "mean_test": 1.0916383333333335
+      },
+      {
+        "fitur": "f17",
+        "ks_train_test": 0.10833999999999999,
+        "spearman_target": 0.21505151405353604,
+        "mean_train": 0.26386652,
+        "mean_test": 0.34592016666666664
+      },
+      {
+        "fitur": "f35",
+        "ks_train_test": 0.09214,
+        "spearman_target": 0.10586405737331074,
+        "mean_train": 1.0055899719999999,
+        "mean_test": 1.0285477333333333
+      },
+      {
+        "fitur": "hujan_tujuan_mm",
+        "ks_train_test": 0.03620000000000001,
+        "spearman_target": 0.030585877135330144,
+        "mean_train": 7.9983868,
+        "mean_test": 7.306801666666666
+      },
+      {
+        "fitur": "hujan_asal_mm",
+        "ks_train_test": 0.033400000000000096,
+        "spearman_target": 0.019084938514355224,
+        "mean_train": 7.9251148,
+        "mean_test": 7.288796666666666
+      },
+      {
+        "fitur": "f24",
+        "ks_train_test": 0.010159999999999947,
+        "spearman_target": 0.0007315338373283158,
+        "mean_train": 0.004394343999999999,
+        "mean_test": -0.0079223
+      },
+      {
+        "fitur": "f25",
+        "ks_train_test": 0.009699999999999931,
+        "spearman_target": 0.002585152132115035,
+        "mean_train": 0.500525364,
+        "mean_test": 0.49720785
+      },
+      {
+        "fitur": "f41",
+        "ks_train_test": 0.009519999999999973,
+        "spearman_target": 0.06372335149413963,
+        "mean_train": 0.044844748,
+        "mean_test": 0.041868666666666665
+      },
+      {
+        "fitur": "f37",
+        "ks_train_test": 0.008879999999999999,
+        "spearman_target": 0.003755898457981849,
+        "mean_train": 0.5008735559999999,
+        "mean_test": 0.5015142333333333
+      },
+      {
+        "fitur": "f06",
+        "ks_train_test": 0.00869999999999993,
+        "spearman_target": 0.00015716068322138427,
+        "mean_train": 0.0032575119999999997,
+        "mean_test": 0.0025612833333333346
+      },
+      {
+        "fitur": "f01",
+        "ks_train_test": 0.008180000000000076,
+        "spearman_target": -0.00022239490755512155,
+        "mean_train": 0.49934393999999993,
+        "mean_test": 0.49813761666666667
+      },
+      {
+        "fitur": "f03",
+        "ks_train_test": 0.00768000000000002,
+        "spearman_target": 0.0014788837468276397,
+        "mean_train": 0.301168,
+        "mean_test": 0.29915
+      },
+      {
+        "fitur": "f44",
+        "ks_train_test": 0.007399999999999962,
+        "spearman_target": 0.0045689341700275825,
+        "mean_train": 1.377629184,
+        "mean_test": 1.3757195833333333
+      },
+      {
+        "fitur": "f26",
+        "ks_train_test": 0.007080000000000086,
+        "spearman_target": 0.000978780764201627,
+        "mean_train": 1.374917664,
+        "mean_test": 1.3824285333333333
+      },
+      {
+        "fitur": "f28",
+        "ks_train_test": 0.006800000000000028,
+        "spearman_target": 0.08703540033234025,
+        "mean_train": 0.13287562,
+        "mean_test": 0.13283430000000002
+      },
+      {
+        "fitur": "f19",
+        "ks_train_test": 0.006599999999999995,
+        "spearman_target": -0.003916078731781372,
+        "mean_train": 0.50039126,
+        "mean_test": 0.49968711666666665
+      },
+      {
+        "fitur": "volume_liter",
+        "ks_train_test": 0.006599999999999939,
+        "spearman_target": 0.09646761818376709,
+        "mean_train": 26.266910799999998,
+        "mean_test": 25.859521666666662
+      },
+      {
+        "fitur": "f04",
+        "ks_train_test": 0.006579999999999919,
+        "spearman_target": 0.36099871805909445,
+        "mean_train": 0.47939472400000005,
+        "mean_test": 0.4765406
+      },
+      {
+        "fitur": "nilai_barang",
+        "ks_train_test": 0.00651999999999997,
+        "spearman_target": 0.04874966332159136,
+        "mean_train": 548121.868,
+        "mean_test": 549226.85
+      },
+      {
+        "fitur": "f02",
+        "ks_train_test": 0.006299999999999972,
+        "spearman_target": 0.00519731977365204,
+        "mean_train": 1.375596564,
+        "mean_test": 1.3787706333333336
+      },
+      {
+        "fitur": "f20",
+        "ks_train_test": 0.006199999999999983,
+        "spearman_target": 0.0005215917666105413,
+        "mean_train": 1.37685702,
+        "mean_test": 1.37984835
+      },
+      {
+        "fitur": "f49",
+        "ks_train_test": 0.006179999999999963,
+        "spearman_target": -0.00040378632436676365,
+        "mean_train": 0.500096044,
+        "mean_test": 0.49957866666666667
+      },
+      {
+        "fitur": "volume_penjual_30h",
+        "ks_train_test": 0.006080000000000085,
+        "spearman_target": -0.009585543171631987,
+        "mean_train": 626.63906,
+        "mean_test": 628.17865
+      },
+      {
+        "fitur": "f12",
+        "ks_train_test": 0.006079999999999974,
+        "spearman_target": 5.71437979541706e-05,
+        "mean_train": -0.00022851999999999953,
+        "mean_test": -0.0024645833333333316
+      },
+      {
+        "fitur": "f11",
+        "ks_train_test": 0.006020000000000025,
+        "spearman_target": -0.0015052312464843007,
+        "mean_train": 0.0031776279999999996,
+        "mean_test": 0.0012881666666666666
+      },
+      {
+        "fitur": "rating_penjual",
+        "ks_train_test": 0.005959999999999965,
+        "spearman_target": -0.04196878319704925,
+        "mean_train": 4.696073559999999,
+        "mean_test": 4.6980025
+      },
+      {
+        "fitur": "f29",
+        "ks_train_test": 0.005939999999999945,
+        "spearman_target": 0.0008528543249048052,
+        "mean_train": -0.0029370079999999996,
+        "mean_test": 0.009191366666666666
+      },
+      {
+        "fitur": "f09",
+        "ks_train_test": 0.005780000000000007,
+        "spearman_target": 0.1152020561348571,
+        "mean_train": 1.024892172,
+        "mean_test": 1.0267728
+      },
+      {
+        "fitur": "f13",
+        "ks_train_test": 0.005780000000000007,
+        "spearman_target": 0.048131462089661514,
+        "mean_train": 0.0010061760000000006,
+        "mean_test": -0.006170000000000001
+      },
+      {
+        "fitur": "f47",
+        "ks_train_test": 0.00546000000000002,
+        "spearman_target": 0.0010826006463132054,
+        "mean_train": -0.0018683280000000005,
+        "mean_test": 0.006634633333333334
+      },
+      {
+        "fitur": "f05",
+        "ks_train_test": 0.005139999999999922,
+        "spearman_target": 0.28796625933598324,
+        "mean_train": 0.478479352,
+        "mean_test": 0.47616881666666666
+      },
+      {
+        "fitur": "f38",
+        "ks_train_test": 0.005120000000000013,
+        "spearman_target": -0.001354142620361905,
+        "mean_train": 1.3822090440000003,
+        "mean_test": 1.3789109000000002
+      },
+      {
+        "fitur": "f14",
+        "ks_train_test": 0.005099999999999993,
+        "spearman_target": 0.0010983595529136725,
+        "mean_train": 1.3740051599999998,
+        "mean_test": 1.38413125
+      },
+      {
+        "fitur": "f48",
+        "ks_train_test": 0.005080000000000029,
+        "spearman_target": 0.0004666256646467727,
+        "mean_train": 0.0009339080000000001,
+        "mean_test": -0.0016218500000000002
+      },
+      {
+        "fitur": "berat_kg",
+        "ks_train_test": 0.005039999999999989,
+        "spearman_target": 0.06892984228053049,
+        "mean_train": 4.714998962317293,
+        "mean_test": 4.711781087512117
+      },
+      {
+        "fitur": "f31",
+        "ks_train_test": 0.0050000000000000044,
+        "spearman_target": 0.0018661834422943695,
+        "mean_train": 0.50043064,
+        "mean_test": 0.50113715
+      },
+      {
+        "fitur": "f43",
+        "ks_train_test": 0.0048799999999999955,
+        "spearman_target": 0.0016387213139920508,
+        "mean_train": 0.500940152,
+        "mean_test": 0.5003871833333333
+      },
+      {
+        "fitur": "f08",
+        "ks_train_test": 0.0048599999999999755,
+        "spearman_target": -0.0009153300506035861,
+        "mean_train": 1.379722176,
+        "mean_test": 1.3760318500000002
+      },
+      {
+        "fitur": "indeks_kemacetan",
+        "ks_train_test": 0.004799999999999999,
+        "spearman_target": -0.00043065683045248853,
+        "mean_train": 0.517002852,
+        "mean_test": 0.5158819333333333
+      },
+      {
+        "fitur": "alamat_skor",
+        "ks_train_test": 0.0047399999999999665,
+        "spearman_target": -0.10613951097370013,
+        "mean_train": 0.7880010959999999,
+        "mean_test": 0.7878538166666667
+      },
+      {
+        "fitur": "f33",
+        "ks_train_test": 0.0046599999999999975,
+        "spearman_target": -0.0005498105078462826,
+        "mean_train": 0.29886,
+        "mean_test": 0.30233333333333334
+      },
+      {
+        "fitur": "f32",
+        "ks_train_test": 0.0046000000000000485,
+        "spearman_target": -0.0008214918635657355,
+        "mean_train": 1.378152912,
+        "mean_test": 1.3743745166666668
+      },
+      {
+        "fitur": "f07",
+        "ks_train_test": 0.0043400000000000105,
+        "spearman_target": -0.0022636552061313753,
+        "mean_train": 0.49881797199999994,
+        "mean_test": 0.4985842833333333
+      },
+      {
+        "fitur": "f22",
+        "ks_train_test": 0.0042200000000000015,
+        "spearman_target": 0.23677148690186167,
+        "mean_train": -0.511960252,
+        "mean_test": -0.5117485166666667
+      },
+      {
+        "fitur": "f39",
+        "ks_train_test": 0.0041999999999999815,
+        "spearman_target": 0.0003946059386427459,
+        "mean_train": 0.299364,
+        "mean_test": 0.30383333333333334
+      },
+      {
+        "fitur": "f10",
+        "ks_train_test": 0.0040999999999999925,
+        "spearman_target": 0.0038077007515713696,
+        "mean_train": 3.00238,
+        "mean_test": 2.9992666666666667
+      },
+      {
+        "fitur": "f50",
+        "ks_train_test": 0.003919999999999979,
+        "spearman_target": 0.00044553992324227354,
+        "mean_train": 1.375726236,
+        "mean_test": 1.3695943333333334
+      },
+      {
+        "fitur": "f18",
+        "ks_train_test": 0.0038799999999999946,
+        "spearman_target": 0.0021652463597413565,
+        "mean_train": -0.0025624079999999995,
+        "mean_test": -0.0012996833333333352
+      },
+      {
+        "fitur": "umur_akun_penjual_hari",
+        "ks_train_test": 0.0038000000000000256,
+        "spearman_target": -0.0010524075598823928,
+        "mean_train": 749.244496,
+        "mean_test": 747.0058
+      },
+      {
+        "fitur": "f23",
+        "ks_train_test": 0.003740000000000021,
+        "spearman_target": 0.2002778545574542,
+        "mean_train": -0.510094636,
+        "mean_test": -0.50981055
+      },
+      {
+        "fitur": "f15",
+        "ks_train_test": 0.0036999999999999256,
+        "spearman_target": 0.001701476694821602,
+        "mean_train": 0.298984,
+        "mean_test": 0.3034833333333333
+      },
+      {
+        "fitur": "jarak_km",
+        "ks_train_test": 0.0036599999999999966,
+        "spearman_target": 0.4992669691143618,
+        "mean_train": 984.8420044,
+        "mean_test": 987.6817533333334
+      },
+      {
+        "fitur": "f42",
+        "ks_train_test": 0.0035199999999999676,
+        "spearman_target": 0.0013320522126342182,
+        "mean_train": 0.0013148440000000003,
+        "mean_test": 0.000543866666666666
+      },
+      {
+        "fitur": "jumlah_item",
+        "ks_train_test": 0.003379999999999994,
+        "spearman_target": 0.07847506988327334,
+        "mean_train": 2.02586,
+        "mean_test": 2.0202833333333334
+      },
+      {
+        "fitur": "f34",
+        "ks_train_test": 0.0030999999999999917,
+        "spearman_target": -0.00031352427375180424,
+        "mean_train": 2.995076,
+        "mean_test": 3.00735
+      },
+      {
+        "fitur": "jam_pickup",
+        "ks_train_test": 0.0030000000000000027,
+        "spearman_target": 0.011452995072941547,
+        "mean_train": 12.269924,
+        "mean_test": 12.255316666666667
+      },
+      {
+        "fitur": "cod",
+        "ks_train_test": 0.0029200000000000337,
+        "spearman_target": 0.08244617196114191,
+        "mean_train": 0.203312,
+        "mean_test": 0.2038
+      },
+      {
+        "fitur": "pengalaman_kurir_bulan",
+        "ks_train_test": 0.0029000000000000137,
+        "spearman_target": -0.05541241280615453,
+        "mean_train": 16.040135199999998,
+        "mean_test": 16.049731666666666
+      },
+      {
+        "fitur": "f16",
+        "ks_train_test": 0.0027800000000000047,
+        "spearman_target": -0.0011665086080378641,
+        "mean_train": 2.995144,
+        "mean_test": 2.9985333333333335
+      },
+      {
+        "fitur": "f36",
+        "ks_train_test": 0.0026800000000000157,
+        "spearman_target": -0.001999807061210384,
+        "mean_train": 0.001463688,
+        "mean_test": -0.0003528000000000001
+      },
+      {
+        "fitur": "asuransi",
+        "ks_train_test": 0.0020400000000000418,
+        "spearman_target": 0.029440290270312607,
+        "mean_train": 0.106852,
+        "mean_test": 0.1082
+      },
+      {
+        "fitur": "f46",
+        "ks_train_test": 0.0019399999999999973,
+        "spearman_target": 0.0012450064949279566,
+        "mean_train": 3.003232,
+        "mean_test": 3.0069
+      },
+      {
+        "fitur": "f40",
+        "ks_train_test": 0.0017399999999999916,
+        "spearman_target": 0.00011580602322077419,
+        "mean_train": 2.999372,
+        "mean_test": 3.0010666666666665
+      },
+      {
+        "fitur": "f21",
+        "ks_train_test": 0.0014199999999999768,
+        "spearman_target": -0.0019789528799010045,
+        "mean_train": 0.300604,
+        "mean_test": 0.29985
+      },
+      {
+        "fitur": "f27",
+        "ks_train_test": 0.00019999999999997797,
+        "spearman_target": -0.0019105230321284931,
+        "mean_train": 0.29896,
+        "mean_test": 0.30088333333333334
+      },
+      {
+        "fitur": "f45",
+        "ks_train_test": 2.0000000000020002e-05,
+        "spearman_target": -0.000136772756281423,
+        "mean_train": 0.301464,
+        "mean_test": 0.29951666666666665
+      }
+    ],
+    "f30_per_bulan": {
+      "2025-01": 0.059,
+      "2025-02": 0.194,
+      "2025-03": 0.29,
+      "2025-04": 0.424,
+      "2025-05": 0.536,
+      "2025-06": 0.66,
+      "2025-07": 0.782,
+      "2025-08": 0.915,
+      "2025-09": 1.034,
+      "2025-10": 1.1524999999999999
+    },
+    "dampak_fitur": [
+      {
+        "varian": "tanpa fitur bermasalah (dipakai)",
+        "pinball50": 6.852922233194738,
+        "pinball90": 4.3491028025550404,
+        "coverage90": 0.8747886420616874,
+        "mae": 13.705844466389475
+      },
+      {
+        "varian": "+ jumlah_scan (bocor)",
+        "pinball50": 5.398951657068038,
+        "pinball90": 2.9170571650451507,
+        "coverage90": 0.8742347384992128,
+        "mae": 10.797903314136075
+      },
+      {
+        "varian": "+ jumlah_scan (bocor), nilai seperti di test",
+        "pinball50": 10.5450843711014,
+        "pinball90": 12.33750809724464,
+        "coverage90": 0.4405719783103026,
+        "mae": 21.0901687422028
+      },
+      {
+        "varian": "+ f30 (penanda waktu)",
+        "pinball50": 6.852033949637084,
+        "pinball90": 4.35675183182599,
+        "coverage90": 0.8734330359745788,
+        "mae": 13.704067899274168
+      }
+    ],
+    "perlakuan_target": [
+      {
+        "perlakuan": "bagi60",
+        "pinball50": 6.852922233194738,
+        "pinball90": 4.3491028025550404,
+        "coverage90": 0.8747886420616874
+      },
+      {
+        "perlakuan": "buang",
+        "pinball50": 6.850719934136023,
+        "pinball90": 4.35448463122815,
+        "coverage90": 0.8731852370124191
+      },
+      {
+        "perlakuan": "biarkan",
+        "pinball50": 6.923700973802263,
+        "pinball90": 4.375986481415032,
+        "coverage90": 0.8769313742638913
+      }
+    ],
+    "perlakuan_terpilih": "bagi60",
+    "keputusan": {
+      "dibuang_bocor": [
+        "jumlah_scan"
+      ],
+      "dibuang_penanda_waktu": [
+        "f30"
+      ],
+      "durasi_ekstrem": "bagi60",
+      "jarak_sentinel": "NaN + indikator jarak_tidak_valid",
+      "berat_na": "biarkan NaN (LightGBM) + indikator berat_hilang"
+    }
+  },
+  "angka": {
+    "TsatuDurasiEkstremN": 397,
+    "TsatuDurasiEkstremPersen": 0.16,
+    "TsatuDurasiMaks": 25452,
+    "TsatuMedianNormal": 61.6,
+    "TsatuMedianEkstremBagi": 61.4,
+    "TsatuJarakSentinelPersen": 0.18,
+    "TsatuJarakNolPersen": 0.28,
+    "TsatuBeratNAPersen": 5.6,
+    "TsatuScanMeanTrain": 9.7,
+    "TsatuScanMeanTest": 1.5,
+    "TsatuScanKS": 0.92,
+    "TsatuScanSpearman": 0.77,
+    "TsatuPinbalBersih": 6.85,
+    "TsatuPinbalScan": 5.4,
+    "TsatuPinbalScanTest": 10.55
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "t1_final",
+  "quick": false,
+  "seed": 42,
+  "time": "2026-11-21 22:43:55",
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "data": {
+    "n": 60000,
+    "p50_median": 63.27690788604518,
+    "p90_median": 88.10924968790884,
+    "koreksi_cqr": 4.704244904804455,
+    "n_p90_dikoreksi_ke_p50": 0,
+    "persen_p90_dikoreksi": 0.0,
+    "mitra_baru_test": 2342
+  },
+  "angka": {
+    "TsatuTestPlimaMedian": 63.3,
+    "TsatuTestPnilanMedian": 88.1,
+    "TsatuKoreksiCQR": 4.7,
+    "TsatuPersenKoreksiMonoton": 0.0
+  }
+}

@@ -1,0 +1,631 @@
+{
+  "name": "t1_experimen",
+  "quick": false,
+  "seed": 42,
+  "time": "2026-11-21 22:23:22",
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "data": {
+    "validasi": {
+      "per_fold": [
+        {
+          "pinball50": 6.7951227826086305,
+          "pinball90": 4.215846280517556,
+          "coverage90": 0.9058380414312618,
+          "mae": 13.590245565217261,
+          "n": 64782,
+          "skema": "waktu",
+          "fold": "F1"
+        },
+        {
+          "pinball50": 6.852922233194738,
+          "pinball90": 4.3491028025550404,
+          "coverage90": 0.8747886420616874,
+          "mae": 13.705844466389475,
+          "n": 68604,
+          "skema": "waktu",
+          "fold": "F2"
+        },
+        {
+          "pinball50": 6.634801007991493,
+          "pinball90": 4.264455955810492,
+          "coverage90": 0.883732930136559,
+          "mae": 13.269602015982986,
+          "n": 83334,
+          "skema": "random",
+          "fold": "R1"
+        },
+        {
+          "pinball50": 6.666709240695301,
+          "pinball90": 4.302668991899856,
+          "coverage90": 0.8824955299821199,
+          "mae": 13.333418481390602,
+          "n": 83333,
+          "skema": "random",
+          "fold": "R2"
+        },
+        {
+          "pinball50": 6.631443474991918,
+          "pinball90": 4.241661949913728,
+          "coverage90": 0.8824595298381194,
+          "mae": 13.262886949983836,
+          "n": 83333,
+          "skema": "random",
+          "fold": "R3"
+        }
+      ],
+      "rata2": [
+        {
+          "skema": "random",
+          "pinball50": 6.644317907892904,
+          "pinball90": 4.269595632541359,
+          "coverage90": 0.882895996652266,
+          "mae": 13.288635815785808
+        },
+        {
+          "skema": "waktu",
+          "pinball50": 6.8240225079016845,
+          "pinball90": 4.282474541536298,
+          "coverage90": 0.8903133417464746,
+          "mae": 13.648045015803369
+        }
+      ]
+    },
+    "tuning": {
+      "grid": [
+        {
+          "num_leaves": 63,
+          "learning_rate": 0.05,
+          "n_estimators": 400,
+          "min_child_samples": 50
+        },
+        {
+          "num_leaves": 31,
+          "learning_rate": 0.05,
+          "n_estimators": 500,
+          "min_child_samples": 100
+        },
+        {
+          "num_leaves": 127,
+          "learning_rate": 0.05,
+          "n_estimators": 300,
+          "min_child_samples": 50
+        },
+        {
+          "num_leaves": 63,
+          "learning_rate": 0.03,
+          "n_estimators": 700,
+          "min_child_samples": 50,
+          "colsample_bytree": 0.6
+        },
+        {
+          "num_leaves": 255,
+          "learning_rate": 0.05,
+          "n_estimators": 250,
+          "min_child_samples": 200
+        }
+      ],
+      "hasil": [
+        {
+          "pinball50": 6.7951227826086305,
+          "pinball90": 4.215846280517556,
+          "coverage90": 0.9058380414312618,
+          "mae": 13.590245565217261,
+          "n": 64782,
+          "fold": "F1",
+          "cfg": 0,
+          "num_leaves": 63,
+          "learning_rate": 0.05,
+          "n_estimators": 400,
+          "min_child_samples": 50,
+          "colsample_bytree": null
+        },
+        {
+          "pinball50": 6.852922233194738,
+          "pinball90": 4.3491028025550404,
+          "coverage90": 0.8747886420616874,
+          "mae": 13.705844466389475,
+          "n": 68604,
+          "fold": "F2",
+          "cfg": 0,
+          "num_leaves": 63,
+          "learning_rate": 0.05,
+          "n_estimators": 400,
+          "min_child_samples": 50,
+          "colsample_bytree": null
+        },
+        {
+          "pinball50": 6.806137117502961,
+          "pinball90": 4.206314857605749,
+          "coverage90": 0.911889104998302,
+          "mae": 13.612274235005922,
+          "n": 64782,
+          "fold": "F1",
+          "cfg": 1,
+          "num_leaves": 31,
+          "learning_rate": 0.05,
+          "n_estimators": 500,
+          "min_child_samples": 100,
+          "colsample_bytree": null
+        },
+        {
+          "pinball50": 6.85733247983783,
+          "pinball90": 4.3363876387117655,
+          "coverage90": 0.8780100285697627,
+          "mae": 13.71466495967566,
+          "n": 68604,
+          "fold": "F2",
+          "cfg": 1,
+          "num_leaves": 31,
+          "learning_rate": 0.05,
+          "n_estimators": 500,
+          "min_child_samples": 100,
+          "colsample_bytree": null
+        },
+        {
+          "pinball50": 6.765305269619735,
+          "pinball90": 4.24606651054775,
+          "coverage90": 0.901207125436078,
+          "mae": 13.53061053923947,
+          "n": 64782,
+          "fold": "F1",
+          "cfg": 2,
+          "num_leaves": 127,
+          "learning_rate": 0.05,
+          "n_estimators": 300,
+          "min_child_samples": 50,
+          "colsample_bytree": null
+        },
+        {
+          "pinball50": 6.850114477048656,
+          "pinball90": 4.423610803886248,
+          "coverage90": 0.8684916331409247,
+          "mae": 13.700228954097312,
+          "n": 68604,
+          "fold": "F2",
+          "cfg": 2,
+          "num_leaves": 127,
+          "learning_rate": 0.05,
+          "n_estimators": 300,
+          "min_child_samples": 50,
+          "colsample_bytree": null
+        },
+        {
+          "pinball50": 6.703771630744445,
+          "pinball90": 4.216299120887924,
+          "coverage90": 0.906903152110154,
+          "mae": 13.40754326148889,
+          "n": 64782,
+          "fold": "F1",
+          "cfg": 3,
+          "num_leaves": 63,
+          "learning_rate": 0.03,
+          "n_estimators": 700,
+          "min_child_samples": 50,
+          "colsample_bytree": 0.6
+        },
+        {
+          "pinball50": 6.832430910110831,
+          "pinball90": 4.356366236314197,
+          "coverage90": 0.8742784677278292,
+          "mae": 13.664861820221661,
+          "n": 68604,
+          "fold": "F2",
+          "cfg": 3,
+          "num_leaves": 63,
+          "learning_rate": 0.03,
+          "n_estimators": 700,
+          "min_child_samples": 50,
+          "colsample_bytree": 0.6
+        },
+        {
+          "pinball50": 6.647036790582894,
+          "pinball90": 4.220345127513955,
+          "coverage90": 0.8979346114661481,
+          "mae": 13.294073581165788,
+          "n": 64782,
+          "fold": "F1",
+          "cfg": 4,
+          "num_leaves": 255,
+          "learning_rate": 0.05,
+          "n_estimators": 250,
+          "min_child_samples": 200,
+          "colsample_bytree": null
+        },
+        {
+          "pinball50": 6.867635657365401,
+          "pinball90": 4.432040552453421,
+          "coverage90": 0.8663489009387207,
+          "mae": 13.735271314730802,
+          "n": 68604,
+          "fold": "F2",
+          "cfg": 4,
+          "num_leaves": 255,
+          "learning_rate": 0.05,
+          "n_estimators": 250,
+          "min_child_samples": 200,
+          "colsample_bytree": null
+        }
+      ],
+      "terbaik": 3,
+      "params_terbaik": {
+        "num_leaves": 63,
+        "learning_rate": 0.03,
+        "n_estimators": 700,
+        "min_child_samples": 50,
+        "colsample_bytree": 0.6
+      }
+    },
+    "model": {
+      "per_fold": [
+        {
+          "pinball50": 9.950550062774639,
+          "pinball90": 6.113778330914965,
+          "coverage90": 0.9084313543885647,
+          "mae": 19.901100125549277,
+          "n": 64782,
+          "model": "Baseline kuantil (layanan×pulau)",
+          "fold": "F1"
+        },
+        {
+          "pinball50": 7.229767402252492,
+          "pinball90": 4.506002558390212,
+          "coverage90": 0.9245315056651539,
+          "mae": 14.459534804504983,
+          "n": 64782,
+          "model": "Linear log-target (Ridge)",
+          "fold": "F1"
+        },
+        {
+          "pinball50": 10.466181175052961,
+          "pinball90": 6.417358341593299,
+          "coverage90": 0.889058947000175,
+          "mae": 20.932362350105922,
+          "n": 68604,
+          "model": "Baseline kuantil (layanan×pulau)",
+          "fold": "F2"
+        },
+        {
+          "pinball50": 7.604045012323342,
+          "pinball90": 4.635884270834762,
+          "coverage90": 0.9014343186986181,
+          "mae": 15.208090024646683,
+          "n": 68604,
+          "model": "Linear log-target (Ridge)",
+          "fold": "F2"
+        },
+        {
+          "pinball50": 6.7951227826086305,
+          "pinball90": 4.215846280517556,
+          "coverage90": 0.9058380414312618,
+          "mae": 13.590245565217261,
+          "n": 64782,
+          "model": "LightGBM quantile (default)",
+          "fold": "F1"
+        },
+        {
+          "pinball50": 6.852922233194738,
+          "pinball90": 4.3491028025550404,
+          "coverage90": 0.8747886420616874,
+          "mae": 13.705844466389475,
+          "n": 68604,
+          "model": "LightGBM quantile (default)",
+          "fold": "F2"
+        },
+        {
+          "pinball50": 6.703771630744445,
+          "pinball90": 4.216299120887924,
+          "coverage90": 0.906903152110154,
+          "mae": 13.40754326148889,
+          "n": 64782,
+          "model": "LightGBM quantile (tuned, cfg 3)",
+          "fold": "F1"
+        },
+        {
+          "pinball50": 6.832430910110831,
+          "pinball90": 4.356366236314197,
+          "coverage90": 0.8742784677278292,
+          "mae": 13.664861820221661,
+          "n": 68604,
+          "model": "LightGBM quantile (tuned, cfg 3)",
+          "fold": "F2"
+        }
+      ],
+      "rata2": [
+        {
+          "model": "LightGBM quantile (tuned, cfg 3)",
+          "pinball50": 6.768101270427637,
+          "pinball90": 4.2863326786010605,
+          "coverage90": 0.8905908099189916,
+          "mae": 13.536202540855275
+        },
+        {
+          "model": "LightGBM quantile (default)",
+          "pinball50": 6.8240225079016845,
+          "pinball90": 4.282474541536298,
+          "coverage90": 0.8903133417464746,
+          "mae": 13.648045015803369
+        },
+        {
+          "model": "Linear log-target (Ridge)",
+          "pinball50": 7.416906207287917,
+          "pinball90": 4.570943414612486,
+          "coverage90": 0.912982912181886,
+          "mae": 14.833812414575833
+        },
+        {
+          "model": "Baseline kuantil (layanan×pulau)",
+          "pinball50": 10.208365618913799,
+          "pinball90": 6.265568336254132,
+          "coverage90": 0.8987451506943698,
+          "mae": 20.416731237827598
+        }
+      ]
+    },
+    "encoding": [
+      {
+        "encoding kota": "te",
+        "pinball50": 6.832430910110831,
+        "pinball90": 4.356366236314197,
+        "coverage90": 0.8742784677278292
+      },
+      {
+        "encoding kota": "freq",
+        "pinball50": 6.93976580449536,
+        "pinball90": 4.408968887532385,
+        "coverage90": 0.8749052533379977
+      },
+      {
+        "encoding kota": "native",
+        "pinball50": 6.845177184137834,
+        "pinball90": 4.385499426901885,
+        "coverage90": 0.872675062678561
+      }
+    ],
+    "encoding_terpilih": "te",
+    "mitra_baru": {
+      "mitra_disimulasikan": "K12",
+      "hasil": [
+        {
+          "strategi": "__OTHER__ tanpa dropout",
+          "pinball50_mitra_baru": 6.756984473224826,
+          "coverage90_mitra_baru": 0.8525641025641025,
+          "pinball50_mitra_lama": 6.860977028662301,
+          "pinball50_terbobot": 6.856921319000239
+        },
+        {
+          "strategi": "__OTHER__ + kategori dropout 5%",
+          "pinball50_mitra_baru": 6.6737644693283205,
+          "coverage90_mitra_baru": 0.8739316239316239,
+          "pinball50_mitra_lama": 6.851055218126452,
+          "pinball50_terbobot": 6.844140878923324
+        },
+        {
+          "strategi": "tanpa fitur mitra_kurir",
+          "pinball50_mitra_baru": 6.68392862283667,
+          "coverage90_mitra_baru": 0.8803418803418803,
+          "pinball50_mitra_lama": 6.80367770579129,
+          "pinball50_terbobot": 6.799007491556059
+        }
+      ],
+      "strategi_terpilih": "tanpa fitur mitra_kurir"
+    },
+    "kalibrasi": {
+      "per_fold": [
+        {
+          "pinball50": 6.703771630744445,
+          "pinball90": 4.216299120887924,
+          "coverage90": 0.906903152110154,
+          "mae": 13.40754326148889,
+          "n": 64782,
+          "fold": "F1",
+          "varian": "tanpa kalibrasi",
+          "lebar_median": 20.94146404820589,
+          "n_jendela": 1
+        },
+        {
+          "pinball50": 6.703771630744445,
+          "pinball90": 4.746395597638671,
+          "coverage90": 0.9608687598406965,
+          "mae": 13.40754326148889,
+          "n": 64782,
+          "fold": "F1",
+          "varian": "CQR jendela terakhir",
+          "lebar_median": 34.911725040673815,
+          "n_jendela": 1
+        },
+        {
+          "pinball50": 6.703771630744445,
+          "pinball90": 4.746395597638671,
+          "coverage90": 0.9608687598406965,
+          "mae": 13.40754326148889,
+          "n": 64782,
+          "fold": "F1",
+          "varian": "CQR gabungan lintas bulan",
+          "lebar_median": 34.911725040673815,
+          "n_jendela": 1
+        },
+        {
+          "pinball50": 6.703771630744445,
+          "pinball90": 4.7687900862007435,
+          "coverage90": 0.9599580130283103,
+          "mae": 13.40754326148889,
+          "n": 64782,
+          "fold": "F1",
+          "varian": "CQR gabungan per layanan",
+          "lebar_median": 36.297055764527755,
+          "n_jendela": 1
+        },
+        {
+          "pinball50": 6.832430910110831,
+          "pinball90": 4.356366236314197,
+          "coverage90": 0.8742784677278292,
+          "mae": 13.664861820221661,
+          "n": 68604,
+          "fold": "F2",
+          "varian": "tanpa kalibrasi",
+          "lebar_median": 20.01742778189974,
+          "n_jendela": 3
+        },
+        {
+          "pinball50": 6.832430910110831,
+          "pinball90": 4.389487507951003,
+          "coverage90": 0.8646726138417585,
+          "mae": 13.664861820221661,
+          "n": 68604,
+          "fold": "F2",
+          "varian": "CQR jendela terakhir",
+          "lebar_median": 18.928510667318818,
+          "n_jendela": 3
+        },
+        {
+          "pinball50": 6.832430910110831,
+          "pinball90": 4.349558290065982,
+          "coverage90": 0.9194799137076556,
+          "mae": 13.664861820221661,
+          "n": 68604,
+          "fold": "F2",
+          "varian": "CQR gabungan lintas bulan",
+          "lebar_median": 27.064218939703366,
+          "n_jendela": 3
+        },
+        {
+          "pinball50": 6.832430910110831,
+          "pinball90": 4.347155762802156,
+          "coverage90": 0.919960935222436,
+          "mae": 13.664861820221661,
+          "n": 68604,
+          "fold": "F2",
+          "varian": "CQR gabungan per layanan",
+          "lebar_median": 27.65861313694598,
+          "n_jendela": 3
+        }
+      ],
+      "rata2": [
+        {
+          "varian": "tanpa kalibrasi",
+          "pinball90": 4.2863326786010605,
+          "coverage90": 0.8905908099189916,
+          "lebar_median": 20.479445915052814
+        },
+        {
+          "varian": "CQR jendela terakhir",
+          "pinball90": 4.567941552794837,
+          "coverage90": 0.9127706868412275,
+          "lebar_median": 26.920117853996317
+        },
+        {
+          "varian": "CQR gabungan lintas bulan",
+          "pinball90": 4.547976943852326,
+          "coverage90": 0.9401743367741761,
+          "lebar_median": 30.98797199018859
+        },
+        {
+          "varian": "CQR gabungan per layanan",
+          "pinball90": 4.55797292450145,
+          "coverage90": 0.9399594741253732,
+          "lebar_median": 31.977834450736868
+        }
+      ],
+      "coverage_per_layanan": [
+        {
+          "varian": "tanpa kalibrasi",
+          "ekspres": 0.9002536637787608,
+          "hemat": 0.8796595016709807,
+          "kargo": 0.8863200748334978,
+          "reguler": 0.8968695849320412
+        },
+        {
+          "varian": "CQR jendela terakhir",
+          "ekspres": 0.9211953315405352,
+          "hemat": 0.9038960588370208,
+          "kargo": 0.9064912149328512,
+          "reguler": 0.9183322839681936
+        },
+        {
+          "varian": "CQR gabungan lintas bulan",
+          "ekspres": 0.9494953513307589,
+          "hemat": 0.9301262873080227,
+          "kargo": 0.9341597747115027,
+          "reguler": 0.9462842080442562
+        },
+        {
+          "varian": "CQR gabungan per layanan",
+          "ekspres": 0.9247079793193484,
+          "hemat": 0.937794072142605,
+          "kargo": 0.937080358590982,
+          "reguler": 0.9478145506945217
+        }
+      ]
+    },
+    "kalibrasi_terpilih": "CQR gabungan lintas bulan",
+    "kalibrasi_aturan": {
+      "fold_dinilai": [
+        "F2"
+      ],
+      "ringkas": [
+        {
+          "varian": "CQR gabungan lintas bulan",
+          "pinball90": 4.349558290065982,
+          "coverage90": 0.9194799137076556
+        },
+        {
+          "varian": "CQR gabungan per layanan",
+          "pinball90": 4.347155762802156,
+          "coverage90": 0.919960935222436
+        },
+        {
+          "varian": "CQR jendela terakhir",
+          "pinball90": 4.389487507951003,
+          "coverage90": 0.8646726138417585
+        },
+        {
+          "varian": "tanpa kalibrasi",
+          "pinball90": 4.356366236314197,
+          "coverage90": 0.8742784677278292
+        }
+      ]
+    },
+    "konfigurasi_final": {
+      "params": {
+        "num_leaves": 63,
+        "learning_rate": 0.03,
+        "n_estimators": 700,
+        "min_child_samples": 50,
+        "colsample_bytree": 0.6
+      },
+      "high_card": "te",
+      "kalibrasi": "CQR gabungan lintas bulan",
+      "unknown_frac": 0.0,
+      "drop_extra": [
+        "mitra_kurir"
+      ]
+    }
+  },
+  "angka": {
+    "TsatuValWaktuPinbal": 6.82,
+    "TsatuValRandomPinbal": 6.64,
+    "TsatuValWaktuCov": 0.89,
+    "TsatuValRandomCov": 0.883,
+    "TsatuBasePinbal": 10.21,
+    "TsatuLinPinbal": 7.42,
+    "TsatuLgbPinbal": 6.77,
+    "TsatuBasePinbalNilan": 6.27,
+    "TsatuLinPinbalNilan": 4.57,
+    "TsatuLgbPinbalNilan": 4.29,
+    "TsatuLgbCov": 0.891,
+    "TsatuCfgTerbaik": 3,
+    "TsatuMitraSim": "K12",
+    "TsatuCovRawFdua": 0.874,
+    "TsatuCovPilihFdua": 0.919,
+    "TsatuCovSebelum": 0.891,
+    "TsatuCovSatuJendela": 0.913,
+    "TsatuCovGabungan": 0.94,
+    "TsatuCovMondrian": 0.94
+  }
+}

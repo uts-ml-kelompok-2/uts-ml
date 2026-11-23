@@ -1,0 +1,10 @@
+bukti,nilai
+max_abs_spearman_n_vs_perilaku,0.010157498281177391
+max_MI_berlebih_vs_acuan_acak,0.024730495170921074
+silhouette_cluster_n_saja,0.6704482436180115
+"ARI(cluster_n, cluster_perilaku)",-7.222680222840352e-05
+"ARI(cluster_semua_kolom, cluster_n)",0.08301047614087505
+"ARI(cluster_semua_kolom, cluster_perilaku)",0.39843915461648
+jumlah_kolom_n,15.0
+"ARI(cluster_n, kota_tier)",-0.0001155568016816729
+"ARI(cluster_n, perangkat)",-0.0001582173982933075

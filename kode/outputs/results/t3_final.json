@@ -1,0 +1,301 @@
+{
+  "name": "t3_final",
+  "quick": false,
+  "seed": 42,
+  "time": "2026-11-21 22:42:07",
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "data": {
+    "anomali": {
+      "perbandingan": [
+        {
+          "metode": "aturan domain",
+          "jumlah": 2426,
+          "persen": 2.021666666666667,
+          "irisan_dgn_aturan_domain_%": 100.0
+        },
+        {
+          "metode": "cluster berprofil bot",
+          "jumlah": 1711,
+          "persen": 1.4258333333333333,
+          "irisan_dgn_aturan_domain_%": 92.98655756867329
+        },
+        {
+          "metode": "Isolation Forest (top 2%)",
+          "jumlah": 2400,
+          "persen": 2.0,
+          "irisan_dgn_aturan_domain_%": 7.75
+        },
+        {
+          "metode": "log-likelihood GMM terendah 2%",
+          "jumlah": 2400,
+          "persen": 2.0,
+          "irisan_dgn_aturan_domain_%": 13.875000000000002
+        },
+        {
+          "metode": "jarak ke centroid tertinggi 2%",
+          "jumlah": 2400,
+          "persen": 2.0,
+          "irisan_dgn_aturan_domain_%": 13.666666666666666
+        }
+      ],
+      "cluster_bot": [
+        0
+      ],
+      "jumlah_minus1": 2546,
+      "persen_minus1": 2.121666666666667,
+      "rincian_aturan": {
+        "sesi>100/minggu": 1672,
+        "rasio_konversi>1": 656,
+        "belanja_30h>belanja_90h": 101
+      }
+    },
+    "profil": [
+      {
+        "segmen": 0,
+        "nama_segmen": "Pemburu Voucher & Pemburu Flash Sale",
+        "ukuran_%": 22.69569363325217,
+        "recency_hari": 9.2,
+        "frekuensi_90h": 7.0,
+        "belanja_90h": 706600.0,
+        "rata2_keranjang": 108600.0,
+        "item_per_pesanan": 2.0,
+        "persen_voucher": 0.832,
+        "persen_flash_sale": 0.686,
+        "persen_paylater": 0.172,
+        "persen_cod": 0.281,
+        "retur_90h": 0.0,
+        "sesi_per_minggu": 6.99,
+        "rasio_konversi": 0.075,
+        "umur": 26.0,
+        "lama_member_bulan": 11.8,
+        "kota_tier": 2.0,
+        "kategori_dominan": "fashion",
+        "jam_dominan": "malam",
+        "perangkat_dominan": "android (74%)",
+        "porsi_tidak_aktif_%": 0.0
+      },
+      {
+        "segmen": 1,
+        "nama_segmen": "Belanja Pagi & Pengguna Android",
+        "ukuran_%": 17.159058014201303,
+        "recency_hari": 6.5,
+        "frekuensi_90h": 11.0,
+        "belanja_90h": 2690900.0,
+        "rata2_keranjang": 251700.0,
+        "item_per_pesanan": 3.0,
+        "persen_voucher": 0.346,
+        "persen_flash_sale": 0.213,
+        "persen_paylater": 0.113,
+        "persen_cod": 0.185,
+        "retur_90h": 0.0,
+        "sesi_per_minggu": 6.57,
+        "rasio_konversi": 0.135,
+        "umur": 38.0,
+        "lama_member_bulan": 18.2,
+        "kota_tier": 2.0,
+        "kategori_dominan": "makanan_minuman",
+        "jam_dominan": "pagi",
+        "perangkat_dominan": "android (91%)",
+        "porsi_tidak_aktif_%": 0.0
+      },
+      {
+        "segmen": 2,
+        "nama_segmen": "Mulai Pasif & Setia COD",
+        "ukuran_%": 16.63289458000579,
+        "recency_hari": 44.2,
+        "frekuensi_90h": 2.0,
+        "belanja_90h": 350550.0,
+        "rata2_keranjang": 169700.0,
+        "item_per_pesanan": 2.0,
+        "persen_voucher": 0.427,
+        "persen_flash_sale": 0.301,
+        "persen_paylater": 0.166,
+        "persen_cod": 0.469,
+        "retur_90h": 0.0,
+        "sesi_per_minggu": 2.27,
+        "rasio_konversi": 0.068,
+        "umur": 35.0,
+        "lama_member_bulan": 22.5,
+        "kota_tier": 2.0,
+        "kategori_dominan": "makanan_minuman",
+        "jam_dominan": "sore",
+        "perangkat_dominan": "android (70%)",
+        "porsi_tidak_aktif_%": 0.0
+      },
+      {
+        "segmen": 3,
+        "nama_segmen": "Sering Retur & Pengguna Paylater",
+        "ukuran_%": 15.524375500195822,
+        "recency_hari": 9.3,
+        "frekuensi_90h": 7.0,
+        "belanja_90h": 1005700.0,
+        "rata2_keranjang": 152500.0,
+        "item_per_pesanan": 2.0,
+        "persen_voucher": 0.667,
+        "persen_flash_sale": 0.578,
+        "persen_paylater": 0.622,
+        "persen_cod": 0.282,
+        "retur_90h": 2.0,
+        "sesi_per_minggu": 6.615,
+        "rasio_konversi": 0.081,
+        "umur": 27.0,
+        "lama_member_bulan": 11.2,
+        "kota_tier": 2.0,
+        "kategori_dominan": "fashion",
+        "jam_dominan": "malam",
+        "perangkat_dominan": "android (74%)",
+        "porsi_tidak_aktif_%": 0.0
+      },
+      {
+        "segmen": 4,
+        "nama_segmen": "Pengguna iOS & Usia Matang",
+        "ukuran_%": 14.482265397517327,
+        "recency_hari": 7.5,
+        "frekuensi_90h": 8.0,
+        "belanja_90h": 3421800.0,
+        "rata2_keranjang": 451300.0,
+        "item_per_pesanan": 2.0,
+        "persen_voucher": 0.206,
+        "persen_flash_sale": 0.17,
+        "persen_paylater": 0.099,
+        "persen_cod": 0.126,
+        "retur_90h": 0.0,
+        "sesi_per_minggu": 5.46,
+        "rasio_konversi": 0.117,
+        "umur": 39.0,
+        "lama_member_bulan": 18.7,
+        "kota_tier": 2.0,
+        "kategori_dominan": "makanan_minuman",
+        "jam_dominan": "siang",
+        "perangkat_dominan": "ios (96%)",
+        "porsi_tidak_aktif_%": 0.0
+      },
+      {
+        "segmen": 5,
+        "nama_segmen": "Cepat Membeli & Rajin Mengulas",
+        "ukuran_%": 7.839664890084628,
+        "recency_hari": 6.6,
+        "frekuensi_90h": 27.0,
+        "belanja_90h": 6741350.0,
+        "rata2_keranjang": 245450.0,
+        "item_per_pesanan": 4.0,
+        "persen_voucher": 0.38,
+        "persen_flash_sale": 0.248,
+        "persen_paylater": 0.12,
+        "persen_cod": 0.198,
+        "retur_90h": 0.0,
+        "sesi_per_minggu": 4.48,
+        "rasio_konversi": 0.469,
+        "umur": 36.0,
+        "lama_member_bulan": 18.3,
+        "kota_tier": 2.0,
+        "kategori_dominan": "makanan_minuman",
+        "jam_dominan": "pagi",
+        "perangkat_dominan": "android (66%)",
+        "porsi_tidak_aktif_%": 0.0
+      },
+      {
+        "segmen": 6,
+        "nama_segmen": "Pelanggan Tidur",
+        "ukuran_%": 5.6660479847429635,
+        "recency_hari": 38.5,
+        "frekuensi_90h": 0.0,
+        "belanja_90h": 0.0,
+        "rata2_keranjang": null,
+        "item_per_pesanan": 2.0,
+        "persen_voucher": 0.444,
+        "persen_flash_sale": 0.329,
+        "persen_paylater": 0.169,
+        "persen_cod": 0.417,
+        "retur_90h": 0.0,
+        "sesi_per_minggu": 2.51,
+        "rasio_konversi": 0.0,
+        "umur": 34.0,
+        "lama_member_bulan": 20.7,
+        "kota_tier": 2.0,
+        "kategori_dominan": "makanan_minuman",
+        "jam_dominan": "malam",
+        "perangkat_dominan": "android (68%)",
+        "porsi_tidak_aktif_%": 100.0
+      }
+    ],
+    "nama_aksi": {
+      "0": {
+        "nama": "Pemburu Voucher & Pemburu Flash Sale",
+        "aksi": "voucher bertarget dengan minimum belanja sedikit di atas rata-rata keranjangnya",
+        "fitur_pembeda": [
+          "persen_voucher (z=+0.94)",
+          "persen_flash_sale (z=+0.90)"
+        ]
+      },
+      "1": {
+        "nama": "Belanja Pagi & Pengguna Android",
+        "aksi": "promo pagi hari dan pengingat keranjang sebelum jam kerja",
+        "fitur_pembeda": [
+          "clr_porsi_jam_pagi (z=+0.60)",
+          "perangkat_android (z=+0.55)"
+        ]
+      },
+      "2": {
+        "nama": "Mulai Pasif & Setia COD",
+        "aksi": "kampanye win-back dengan voucher terbatas waktu",
+        "fitur_pembeda": [
+          "recency_hari (z=+1.19)",
+          "persen_cod (z=+0.75)"
+        ]
+      },
+      "3": {
+        "nama": "Sering Retur & Pengguna Paylater",
+        "aksi": "panduan ukuran/ulasan produk dan rekomendasi yang lebih akurat",
+        "fitur_pembeda": [
+          "retur_90h (z=+1.48)",
+          "persen_paylater (z=+1.20)"
+        ]
+      },
+      "4": {
+        "nama": "Pengguna iOS & Usia Matang",
+        "aksi": "kampanye produk premium di aplikasi iOS",
+        "fitur_pembeda": [
+          "perangkat_ios (z=+1.58)",
+          "umur (z=+0.65)"
+        ]
+      },
+      "5": {
+        "nama": "Cepat Membeli & Rajin Mengulas",
+        "aksi": "rekomendasi produk pelengkap (cross-sell)",
+        "fitur_pembeda": [
+          "rasio_konversi (z=+2.45)",
+          "ulasan_90h (z=+1.58)"
+        ]
+      },
+      "6": {
+        "nama": "Pelanggan Tidur",
+        "aksi": "kampanye reaktivasi: voucher comeback + pengingat kategori favorit",
+        "fitur_pembeda": [
+          "frekuensi_90h = 0"
+        ]
+      }
+    },
+    "ukuran_cluster": {
+      "-1": 2546,
+      "0": 26657,
+      "1": 20154,
+      "2": 19536,
+      "3": 18234,
+      "4": 17010,
+      "5": 9208,
+      "6": 6655
+    }
+  },
+  "angka": {
+    "TtigaAnomaliN": 2546,
+    "TtigaAnomaliPersen": 2.12,
+    "TtigaNSegmen": 7
+  }
+}

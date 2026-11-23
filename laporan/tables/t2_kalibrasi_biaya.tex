@@ -1,0 +1,16 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+kalibrasi & brier & ece & biaya\_aturan\_p\_x\_nominal & biaya\_threshold\_tunggal & biaya\_tandai\_semua & biaya\_tidak\_menandai \\
+\midrule
+isotonic & 0.0023 & 0.0003 & 69.4844 & 81.2908 & 2567.6875 & 832.4982 \\
+none & 0.0024 & 0.0018 & 83.1257 & 81.3297 & 2567.6875 & 832.4982 \\
+sigmoid & 0.0022 & 0.0002 & 69.1319 & 81.3297 & 2567.6875 & 832.4982 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Kalibrasi (Brier, ECE) dan biaya (juta Rp) di validasi, rata-rata F1–F2.}
+\label{tab:t2_kalibrasi_biaya}
+\end{table}

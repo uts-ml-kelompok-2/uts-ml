@@ -1,0 +1,20 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+pulau\_tujuan & n & median\_durasi & pinball50 & pinball90 & coverage90 & mae \\
+\midrule
+Papua & 1226 & 164.050 & 21.304 & 11.220 & 0.888 & 42.608 \\
+Maluku & 1341 & 116.500 & 13.759 & 7.037 & 0.915 & 27.518 \\
+Kalimantan & 3868 & 92.500 & 11.097 & 6.300 & 0.898 & 22.193 \\
+Sulawesi & 4532 & 89.400 & 10.539 & 5.835 & 0.905 & 21.078 \\
+Bali-Nusa Tenggara & 2659 & 66.500 & 7.811 & 4.724 & 0.926 & 15.623 \\
+Sumatera & 9178 & 64.200 & 7.246 & 4.511 & 0.926 & 14.492 \\
+Jawa & 45800 & 56.700 & 5.322 & 3.673 & 0.929 & 10.645 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Error per pulau\_tujuan (fold F2, model final + kalibrasi).}
+\label{tab:t1_breakdown_pulau_tujuan}
+\end{table}

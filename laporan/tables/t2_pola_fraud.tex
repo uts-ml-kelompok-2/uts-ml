@@ -1,0 +1,19 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+pola & n\_trx & rate\_fraud\_\% & porsi\_dari\_semua\_fraud\_\% & recall\_model \\
+\midrule
+akun baru (< 30 hari) & 3551 & 2.48 & 13.75 & 0.48 \\
+akses dari IP luar negeri & 861 & 9.06 & 12.19 & 0.68 \\
+pengambilalihan akun (ganti password 7h + perangkat baru) & 131 & 51.15 & 10.47 & 0.96 \\
+card testing ($\geq$3 trx/1 jam, nominal < 50rb) & 511 & 11.15 & 8.91 & 0.37 \\
+kartu tidak hadir + jarak jauh (> 500 km) & 296 & 7.09 & 3.28 & 0.95 \\
+merchant refund tinggi (> 10\%) & 31 & 12.90 & 0.62 & 1.00 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Pola fraud: tingkat fraud dalam pola, porsi dari seluruh fraud, dan recall model (F2).}
+\label{tab:t2_pola_fraud}
+\end{table}

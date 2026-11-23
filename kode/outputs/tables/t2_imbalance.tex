@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+strategi & pr\_auc & roc\_auc & biaya aturan (juta Rp) & biaya thr tunggal (juta Rp) & recall & presisi & ece\_mentah \\
+\midrule
+tanpa penanganan & 0.775 & 0.988 & 69.484 & 81.291 & 0.693 & 0.371 & 0.002 \\
+undersampling negatif 1:20 & 0.760 & 0.988 & 71.514 & 83.972 & 0.685 & 0.354 & 0.002 \\
+class weight (scale\_pos\_weight) & 0.769 & 0.989 & 72.333 & 82.470 & 0.684 & 0.386 & 0.001 \\
+SMOTE (rasio 1:10) & 0.769 & 0.986 & 73.953 & 87.238 & 0.685 & 0.363 & 0.001 \\
+Logistic regression (baseline) & 0.566 & 0.931 & 128.265 & 157.154 & 0.533 & 0.356 & 0.001 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Strategi class imbalance (rata-rata F1–F2). Probabilitas dikalibrasi isotonic di bulan kalibrasi sebelum aturan biaya.}
+\label{tab:t2_imbalance}
+\end{table}
